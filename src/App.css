@@ -1,38 +1,179 @@
 .App {
   text-align: center;
+  font-size: 1.1rem;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.homeDiv{
+  width: 100vw;
+  height: 100vh; 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
+}
+
+.subTitle {
+  margin-top: 1rem;
+  height: 5vh; 
+  width: 100%;
+  animation: onLoad 1s ease-in; 
+  animation-iteration-count: 1;
+}
+
+@keyframes onLoad {
+  0%{
+    transform: translateY(3rem);
+    opacity: 0;
+  }  
+  60%{
+    transform: translateY(3rem);
+    opacity: .3;
+  }
+  100%{
+    transform: translateY(0rem);
+    opacity: 1;
+
+  }
+}
+
+.homeContent {
+  height: 80vh; 
+  width: 100%;
+  display: flex;
+
+  align-items: flex-start;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.homeIntro {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.homePhoto {
+  width: 15rem;
+  height: 30vh;
+  background-position: center;
+  background-position-x: -7rem;
+  background-repeat: no-repeat;
+  background-size: 170%;
+  border-radius: 100%;
+  margin: 0 1rem;
+  opacity: .9;
+  background-color: rgb(25, 87, 38);
+}
+
+.homeIntroWords {
+  width: 20%;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  width: 100%;
+  height: 100vh;
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ratingDiv {
+  display: flex;
+}
+
+.feelingMessage:hover {
+  animation: bounce 1s ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(-1rem);
   }
-  to {
-    transform: rotate(360deg);
+  30%{
+    transform: translateY(1rem);
   }
+  100%{
+    transform: translateY(0);
+  }
+}
+
+.feelingDiv {
+  height: 50vh; 
+  width: 30rem;
+  opacity: .9;
+  margin-top: 1rem;
+}
+
+.opacity {
+animation: opacity 1.5s ease;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: .2;
+  }
+  100% {
+    opacity: 1;
+  }
+  
+}
+
+.yikes {
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/yikes.jpg");
+  background-position: center;
+  background-size: 100%;
+}
+
+.happy {
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/happy.jpg");
+  background-position: center;
+  background-size: 100%;
+
+}
+
+.okay {
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/okay.jpg");
+  background-position: center;
+  background-size: 100%;
+}
+
+.yikes:hover, .happy:hover, .okay:hover {
+  background-size: 120%;
+  transition: 1s ease-in-out;
+}
+
+.blank {
+  background-color: #fff;
+}
+
+
+.reveal {
+  position: relative; 
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
 }

@@ -7,19 +7,19 @@ const Work = () => {
 
     return (
         <>
-        <Box sx={{ width: "100vw", height: "330vh", display: "flex", 
+        <Box sx={{ width: "100vw", height: "430vh", display: "flex", 
         justifyContent: "flex-start", alignItems: "center", flexDirection: "column", 
         marginTop: 5, pl: "20" }}>
-          <Box sx={{ width: "80vw", height: "80vh", display: "flex", 
+          <Box sx={{ width: "80vw", height: "100vh", display: "flex", 
         justifyContent: "center", alignItems: "center", flexDirection: "column", 
-        marginTop: 5}}>
+        marginTop: 1}}>
             <Typography variant="h6" noWrap component="div" sx={{ margin: 1}}>
             React.js site built from scratch (React, Design,CSS)
           </Typography>
 
 
             <video src={vid} height={650} autoPlay={true} loop={true} 
-            sx={{ border: 1}}/>
+            sx={{ border: 1, margin:30}}/>
          
           </Box>
           <Box sx={{ width: "80vw", height: "100vh", display: "flex", 
