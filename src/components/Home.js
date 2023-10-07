@@ -4,6 +4,7 @@ import Slider from '@mui/material/Slider';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from "react"
 import Feeling from "./Feeling"
+import Data from "./Data"
 
 const Home = () => {
   const [rating, setRating] = useState("")
@@ -82,7 +83,7 @@ const Home = () => {
                   <p>How are you feeling today on a scale 0-100?</p>
                     <div className="ratingDiv">
                     <TextField id="standard-basic" label="Rating" variant="standard" 
-                    value={rating} onChange={(e) => setRating(e.target.value)}
+                    value={rating} onChange={(e) => setRating(e.target.value)} type="number"
                     />
                     <Button onClick={handleSubmit}>
                       submit
@@ -109,6 +110,9 @@ const Home = () => {
             </div>
             <div className="homeDiv"> 
             <div className="reveal welcome">
+              <p>Lets get some data!!!</p>
+
+              <Data />
 
             </div>
 
