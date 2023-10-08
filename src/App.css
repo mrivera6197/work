@@ -1,8 +1,9 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&family=Rajdhani&family=Rubik+Mono+One&display=swap');.App {
   text-align: center;
   font-size: 1.1rem;
-
+  margin: 0;
 }
+
 
 .homeDiv{
   width: 100vw;
@@ -46,12 +47,22 @@
   justify-content: center;
 }
 
+
+
 .homeIntro {
   width: 100%;
   height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.homeTitle h3 {
+  font-size: 1.6rem;
+  color:#A2B575;
+  animation: bounce 1s ease;
+  animation-iteration-count: 1;
+
 }
 
 .homePhoto {
@@ -222,40 +233,296 @@ animation: opacity 1.5s ease;
 
 .portfolio {
   width: 100%;
-  margin-top: 7rem;
+  margin-top: 5rem;
 
 }
 
 .workDiv {
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+
+.workDiv h3 {
+  font-size: 2rem;
+  color:rgba(15, 64, 31, 0.845);
+  animation: bounce 1s ease;
+  animation-iteration-count: 1;
+  font-family: 'Rubik Mono One', sans-serif;
+  }
+
+  .workDiv p {
+    margin: .5rem 0;
+  }
+
+  .workDiv h4 {
+    color:rgba(15, 64, 31, 0.845);
+    margin: 0;
+  }
+
+
+
+.leftShow {
+  width: "60rem";
+   height: "80vh";
+   margin-left: -15rem;
+   color:rgba(15, 64, 31, 0.845);
+   font-size:1.5rem;
+   font-weight: bold;
+}
+
+.rightShow {
+  width: "40rem";
+   height: "70vh";
+   font-size:1.5rem;
+   color:rgba(15, 64, 31, 0.845);
+   margin-left: 12rem;
+   font-weight: bold;
+}
+
+.budget h3 {
+  font-size:1.5rem;
+  color:rgba(15, 64, 31, 0.845);
+  font-weight: bold;
+}
+
+.budget p {
+  font-size: 1.2rem;
+}
+
+
+/* About Page */
+
+.aboutPage {
+  height: 250vh;
+  width: 100%;
+}
+
+.color {
+  position: relative; 
+  background-color: rgba(20, 21, 23, 0.617);
 
 }
 
-.workDiv h3 {
+.color.active {
+  background-color: #fff;
+  transition: 1s ease;
+}
+
+.aboutIntro {
+  margin-top: 5rem;
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutIntro h3 {
   font-size: 1.6rem;
   color:rgba(29, 27, 27, 0.845);
   animation: bounce 1s ease;
   animation-iteration-count: 1;
 }
 
-.portfolio h3 {
-  font-weight: 400;
-  font-size: 1.35rem;
+.aboutContent {
+  width: 100%;
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.leftShow {
-  width: "60rem";
-   height: "80vh";
-   margin-left: -15rem;
+.overview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
 }
 
-.rightShow {
-  width: "40rem";
-   height: "70vh";
-   font-size: 1.3rem;
-   margin-left: 12rem;
+.overview p {
+  margin: 0.25rem;
+}
+
+.overviewContent {
+  display: flex;
+  width: 80%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  margin-top: 5rem;
+
+}
+
+.overviewContent li {
+  text-decoration: none;
+  list-style: none;
+  text-align: left;
+}
+
+.me {
+  width: 50%;
+  height: 40vh;
+  margin-top: 7rem;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.mePhoto {
+  margin: 0 5rem;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 100%;
+  background-image: url("./images/IMG_2184.JPG");
+  background-position: center;
+  background-size: 180%;
+  background-repeat: no-repeat;
+}
+
+.meContent {
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 15rem; 
+  height: 20rem;
+}
+
+.meContent p {
+  text-align: left;
+}
+
+.contactButton {
+  width: 7rem;
+  height: 3rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 5%;
+  border:1px solid rgba(31, 28, 28, 0.696); 
+  background-color: #ffffffde;
+  margin-top: 1rem;
+
+}
+
+.contactButton:hover {
+  border: 1px solid rgb(25, 138, 225);
+}
+
+.meContent p {
+  margin: 0;
+}
+
+.skills h4 {
+  margin: 1rem 2.5rem;
+}
+
+.skills1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
 }
 
 
-.leftShow p {
-  font-size: 1.3rem;
+.skills1 ul {
+  margin: 0;
 }
+
+.end {
+  margin-top: 10rem;
+}
+
+.catPhoto {
+  height: 20rem; 
+  width: 30rem;
+  background-image: url("./images/clouds.jpg");
+  background-position: center;
+  background-size: 150%;
+  background-repeat: no-repeat;
+}
+
+.contactButton:hover {
+  animation: bounce 1s ease;
+}
+
+.aboutButton {
+  margin-bottom: 10rem;
+  border: 1px solid rgba(18, 48, 18, 0.613);
+  font-size: 1rem;
+  width: 10rem;
+  color: rgb(18, 48, 18);
+  font-weight: bold;
+}
+
+/*Contact Page*/
+
+.contactContainer {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.formTitle h3 {
+  font-size: 1.6rem;
+  color:rgba(29, 27, 27, 0.845);
+  animation: bounce 1s ease;
+  animation-iteration-count: 1;
+}
+
+.contactForm {
+  margin-top: 4rem;
+  width: 40%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+
+input{
+  width: 100%;
+  height: 3rem;
+  font-size: 1.1rem;
+  border: 1px solid rgba(21, 115, 198, 0.689);
+  margin: .25rem 0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+textarea {
+  width: 90%;
+  border: 1px solid rgba(21, 115, 198, 0.689);
+  margin: .25rem 0;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  font-size: 1.1rem;
+}
+
+textarea {
+  width: 100%; 
+  height: 20vh;
+  margin-top: 1rem;
+}
+
+
+
+
+input {
+
+}
+
+
+
+
+
+

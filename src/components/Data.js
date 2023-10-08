@@ -81,7 +81,7 @@ const Data = () => {
         <Toolbar />
               <Container maxWidth="lg" sx={{display: "flex", justifyContent: "center",
                height: "60vh", alignItems:"center", flexDirection: "column"}} >
-                <Typography sx={{marginBottom:2}}>
+                <Typography sx={{marginBottom:2, color: "#A2B575", fontWeight: "bold"}}>
                     Movie IMDB Data
                 </Typography>
                 <Grid item xs={12} lg={9} display="flex" justifyContent="center" width="100%"

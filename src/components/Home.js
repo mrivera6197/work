@@ -5,6 +5,7 @@ import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from "react"
 import Feeling from "./Feeling"
 import Data from "./Data"
+import Footer from "./Footer"
 
 const Home = () => {
   const [rating, setRating] = useState("")
@@ -74,9 +75,11 @@ const Home = () => {
         justifyContent: "flex-start", alignItems: "center", flexDirection: "column", 
         marginTop: 5, pl: "20", id:"hello" }}>
             <Box sx={{ marginTop: 5}}>
-            <Typography>
-                Hi! Thanks For Checking Out My Page! Scroll to See More
-            </Typography>
+              <div className="homeTitle">
+                <h3>  Hi! Thanks For Checking Out My Page!</h3>
+                <p>Scroll to See More</p>
+              </div>
+
             <div className="homeDiv">
                 <div className="homeContent reveal">
                 <div className="background">
@@ -121,6 +124,7 @@ const Home = () => {
             </Box>
 
         </Box>
+        <Footer />
         </ThemeProvider>
         </>
     )
