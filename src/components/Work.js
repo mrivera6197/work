@@ -3,6 +3,7 @@ import Box from "@mui/material/Box"
 import vid from "../images/css.mp4"
 import calm from "../images/calm.mp4"
 import budget from "../images/budget.mp4"
+import budgetFinal from "../images/dashFinal.mp4"
 import generator from "../images/generator.mp4"
 import Footer from "./Footer"
 
@@ -78,7 +79,7 @@ const Work = () => {
 
           </div>
 
-        <video src={budget} height={450} autoPlay={true} loop={true} />
+        <video src={budgetFinal} height={450} autoPlay={true} loop={true} />
          
           </Box>
 
