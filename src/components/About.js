@@ -50,7 +50,7 @@ const About = () => {
             </div>
             <div className="aboutContent">
                 <div className="overview reveal">
-                    <p>My name is Mali, I am a Software Developer who specializes in front-end development.</p>
+                    <p>My name is Mali, I am a Software Engineer who specializes in front-end development.</p>
                     <p>I'm passionate about UX design and data analysis.</p>
                     <p>Here's a list of my skills and what I have been learning lately.</p>
 

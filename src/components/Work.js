@@ -1,4 +1,4 @@
-import { Typography, Button } from "@mui/material";
+import { Typography, Button, Link } from "@mui/material";
 import Box from "@mui/material/Box"
 import vid from "../images/css.mp4"
 import calm from "../images/calm.mp4"
@@ -46,10 +46,10 @@ const Work = () => {
               <p>This page showcases design, css, and React.js skills.</p>
               <h4>Scroll to See Portfolio Site </h4>
             </div>
+            <Link sx={{fontSize:20, marginTop:10}} target='_blank' href='https://neon-pavlova-ab8313.netlify.app/'>Check out Lemoncub</Link>
             <div className="portfolio reveal">
               <video src={vid} height={570} autoPlay={true} loop={true} />
             </div>
-
           </Box>
 
           <Box sx={{ width: "80%", height: "200vh", display: "flex", flexDirection: "column",
