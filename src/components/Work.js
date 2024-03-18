@@ -35,13 +35,13 @@ const Work = () => {
 
     return (
         <>
-        <Box sx={{ width: "100%", height: "450vh", display: "flex", 
+        <Box sx={{ width: "100%", height: "500vh", display: "flex", 
         justifyContent: "flex-start", alignItems: "center", flexDirection: "column", 
-        marginTop: 10, pl: "20"}}>
+        marginTop: 10, pl: "20", padding: 2}}>
 
           <Box sx={{ width: "80%", height: "100vh", display: "flex", 
         justifyContent: "flex-start", alignItems: "center", flexDirection: "column", 
-        marginTop: 5 }}>
+        marginTop: 10 }}>
             <div className="workDiv">
               <h3>Welcome to the Work Page!</h3>
               <p>This page showcases design, css, and React.js skills.</p>
@@ -70,7 +70,7 @@ const Work = () => {
           </Box>
           <Box sx={{ width: "80vw", height: "60vh", display: "flex", 
         justifyContent: "flex-start", alignItems: "center", flexDirection: "column",
-        marginTop: 5, mb:6, boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}}
+        marginTop: 10, mb:10, }}
         className='reveal'>
           <div className="budget">
           <h3>Budgeting Application</h3>
@@ -79,7 +79,7 @@ const Work = () => {
         <video src={budgetFinal} height={450} autoPlay={true} loop={true} />
           </Box>
           <Box sx={{ width: '80vw', height: '100vh', display: 'flex', 
-          flexDirection: 'column', marginTop: '5rem'}}>
+          flexDirection: 'column', marginTop: '5rem', marginBottom: 10}}>
             <Box className='movieApp reveal'>
               <Box sx={{ marginBottom: 5}}>
               <Typography className="movieTitle">Movie Application</Typography>

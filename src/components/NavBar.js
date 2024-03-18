@@ -25,7 +25,7 @@ import { keyframes } from '@emotion/react';
 
 import { Link } from "react-router-dom"
 
-const drawerWidth = 240;
+const drawerWidth = 200;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -113,7 +113,7 @@ export default function NavBar() {
       <CssBaseline />
       <AppBar position="fixed" open={open} >
         <Toolbar sx={{
-          padding: '1.5rem',
+          padding: '1rem',
           background: '#202121', 
           perspective: '1000px', 
           }}>
@@ -151,7 +151,7 @@ export default function NavBar() {
             width: drawerWidth,
             boxSizing: 'border-box',
             boxShadow: 'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px',
-            padding: '0 1rem',
+            padding: '0 0.5rem',
             background: '#202121', 
             perspective: '1000px', 
           },
