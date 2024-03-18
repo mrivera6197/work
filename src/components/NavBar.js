@@ -21,6 +21,7 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import SummarizeOutlinedIcon from '@mui/icons-material/SummarizeOutlined';
 import ContactsOutlinedIcon from '@mui/icons-material/ContactsOutlined';
+import { keyframes } from '@emotion/react';
 
 import { Link } from "react-router-dom"
 
@@ -96,6 +97,15 @@ export default function NavBar() {
     setOpen(false);
   };
 
+  const fadeInAnimation = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`;
+
   return (
     <ThemeProvider theme={theme}>
 
@@ -104,7 +114,8 @@ export default function NavBar() {
       <AppBar position="fixed" open={open} >
         <Toolbar sx={{
           padding: '1.5rem',
-          background: '#25292E', 
+          background: '#202121', 
+          perspective: '1000px', 
           }}>
           <IconButton
             color="inherit"
@@ -120,7 +131,6 @@ export default function NavBar() {
           <Typography variant="h6" noWrap component="div"
           className='fontClass'
           sx={{
-            fontFamily: 'Roboto, sans-serif', 
             fontSize: '1.4rem',
             color: '#C7DDF8',
             transition: '0.2s ease', 
@@ -142,7 +152,8 @@ export default function NavBar() {
             boxSizing: 'border-box',
             boxShadow: 'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px',
             padding: '0 1rem',
-            background: '#25292E', 
+            background: '#202121', 
+            perspective: '1000px', 
           },
         }}
         variant="persistent"
@@ -164,8 +175,8 @@ export default function NavBar() {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>
-            <ListItem disablePadding component={Link} to="/">
+        <List sx={{ animation: `${open ? fadeInAnimation : ''} 1s ease-in-out` }}>
+            <ListItem disablePadding component={Link} to="/" sx={{ perspective: '1000px'}}>
               <ListItemButton
                sx={{
                 color: "#D7DCE3", 
@@ -173,10 +184,12 @@ export default function NavBar() {
                 border: '1px solid white', 
                 boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
                 transition: '0.2s ease', 
+                transformStyle: 'preserve-3d', 
+                transform: 'rotateY(-33deg)', 
                 borderRadius: '2rem', 
                 '&:hover': {
                   color: '#C8DDFB',
-                  transform: 'scale(1.1)'
+                  transform: 'rotateY(0deg)', 
                 }
                }}>
                 <ListItemIcon>
@@ -185,18 +198,20 @@ export default function NavBar() {
                 <ListItemText primary="Home" />
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding component={Link} to="/work">
+            <ListItem disablePadding component={Link} to="/work"  sx={{ perspective: '1000px'}}>
               <ListItemButton
                sx={{
                 color: "#D7DCE3", 
                 transition: '0.2s ease', 
                 margin: '0.5rem 0', 
                 border: '1px solid white', 
+                transformStyle: 'preserve-3d', 
+                transform: 'rotateY(34deg)', 
                 boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
                 borderRadius: '2rem', 
                 '&:hover': {
                   color: '#C8DDFB',
-                  transform: 'scale(1.1)'
+                  transform: 'rotateY(0deg)', 
                 }
                }}>
                 <ListItemIcon>
@@ -205,18 +220,20 @@ export default function NavBar() {
                 <ListItemText primary="Work" />
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding component={Link} to="/about">
+            <ListItem disablePadding component={Link} to="/about" sx={{ perspective: '1000px'}} >
               <ListItemButton
                sx={{
                 color: "#D7DCE3", 
                 transition: '0.2s ease', 
                 margin: '0.5rem 0', 
                 border: '1px solid white', 
+                transformStyle: 'preserve-3d', 
+                transform: 'rotateY(-35deg)', 
                 boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
                 borderRadius: '2rem', 
                 '&:hover': {
                   color: '#C8DDFB',
-                  transform: 'scale(1.1)'
+                  transform: 'rotateY(0deg)', 
                 } 
                }}>
                 <ListItemIcon>
@@ -225,18 +242,20 @@ export default function NavBar() {
                 <ListItemText primary="About" />
               </ListItemButton>
             </ListItem>
-            <ListItem disablePadding component={Link} to="/contact">
+            <ListItem disablePadding component={Link} to="/contact" sx={{ perspective: '1000px'}}>
               <ListItemButton
                sx={{
                 color: "#D7DCE3", 
                 transition: '0.2s ease', 
                 margin: '0.5rem 0', 
                 border: '1px solid white', 
+                transformStyle: 'preserve-3d', 
+                transform: 'rotateY(38deg)', 
                 boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
                 borderRadius: '2rem', 
                 '&:hover': {
                   color: '#C8DDFB',
-                  transform: 'scale(1.1)'
+                  transform: 'rotateY(0deg)', 
                 }
                }}>
                 <ListItemIcon>
