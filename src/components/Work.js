@@ -5,6 +5,7 @@ import calm from "../images/calm.mp4"
 import budget from "../images/budget.mp4"
 import budgetFinal from "../images/dashFinal.mp4"
 import generator from "../images/generator.mp4"
+import movie from '../images/movieApp.mp4'
 import Footer from "./Footer"
 
 import React, { useRef } from 'react'; 
@@ -36,11 +37,11 @@ const Work = () => {
         <>
         <Box sx={{ width: "100%", height: "450vh", display: "flex", 
         justifyContent: "flex-start", alignItems: "center", flexDirection: "column", 
-        marginTop: 10, pl: "20" }}>
+        marginTop: 10, pl: "20"}}>
 
-          <Box sx={{ width: "80%", height: "140vh", display: "flex", 
+          <Box sx={{ width: "80%", height: "100vh", display: "flex", 
         justifyContent: "flex-start", alignItems: "center", flexDirection: "column", 
-        marginTop: 5}}>
+        marginTop: 5 }}>
             <div className="workDiv">
               <h3>Welcome to the Work Page!</h3>
               <p>This page showcases design, css, and React.js skills.</p>
@@ -52,7 +53,7 @@ const Work = () => {
             </div>
           </Box>
 
-          <Box sx={{ width: "80%", height: "200vh", display: "flex", flexDirection: "column",
+          <Box sx={{ width: "80%", height: "150vh", display: "flex", flexDirection: "column",
         justifyContent: "space-around", alignItems: "center"}}>
           <div className="leftShow reveal">
             <p>Keyframe Animations</p>
@@ -60,27 +61,35 @@ const Work = () => {
                className=""/>
 
           </div>
-
           <div className="rightShow reveal">
             <p>Random Generation</p>
               <video src={generator} height={600} autoPlay={true} loop={true}  
                className=""/>
 
           </div>
-            
-         
           </Box>
-          <Box sx={{ width: "80vw", height: "80vh", display: "flex", 
-        justifyContent: "flex-start", alignItems: "center", flexDirection: "column", 
-        marginTop: 5, mb:6, boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}}>
+          <Box sx={{ width: "80vw", height: "60vh", display: "flex", 
+        justifyContent: "flex-start", alignItems: "center", flexDirection: "column",
+        marginTop: 5, mb:6, boxShadow: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px"}}
+        className='reveal'>
           <div className="budget">
           <h3>Budgeting Application</h3>
           <p>Java Spring Boot, Chart.js, Material UI</p>
-
           </div>
-
         <video src={budgetFinal} height={450} autoPlay={true} loop={true} />
-         
+          </Box>
+          <Box sx={{ width: '80vw', height: '100vh', display: 'flex', 
+          flexDirection: 'column', marginTop: '5rem'}}>
+            <Box className='movieApp reveal'>
+              <Box sx={{ marginBottom: 5}}>
+              <Typography className="movieTitle">Movie Application</Typography>
+              <Typography>Node.js and MongoDB for data persistence</Typography>
+              <Typography>Express, Google Cloud to store images</Typography>
+              </Box>
+
+              <video src={movie} height={650} autoPlay={true} loop={true} ></video>
+            </Box>
+
           </Box>
 
           <div>

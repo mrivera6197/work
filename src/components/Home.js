@@ -73,7 +73,7 @@ const Home = () => {
         <ThemeProvider theme={theme}>
           <Box sx={{ width: "100vw", height: "330vh", display: "flex", 
         justifyContent: "flex-start", alignItems: "center", flexDirection: "column", 
-        marginTop: 5, pl: "20", id:"hello" }}>
+        marginTop: 5, pl: "20", id:"hello", padding: 10 }}>
             <Box sx={{ marginTop: 5}}>
               <div className="homeTitle">
                 <h3>  Hi! Thanks For Checking Out My Page!</h3>

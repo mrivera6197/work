@@ -1,7 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&family=Rajdhani&family=Rubik+Mono+One&display=swap');.App {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Poppins&family=Rajdhani&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400..800&family=Protest+Guerrilla&display=swap'); 
+
+.App {
   text-align: center;
   font-size: 1.1rem;
   margin: 0;
+  background-color: #ffffffa7;
+}
+
+.fontClass {
+  font-family: "Baloo Chettan 2", sans-serif;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
 }
 
 
@@ -288,6 +298,21 @@ animation: opacity 1.5s ease;
 
 .budget p {
   font-size: 1.2rem;
+}
+
+.movieApp {
+  margin: 1rem;
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movieTitle {
+  font-size:1.5rem !important;
+  color:rgba(15, 64, 31, 0.845);
+  font-weight: bold !important;
 }
 
 

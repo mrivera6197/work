@@ -101,18 +101,34 @@ export default function NavBar() {
 
     <Box sx={{ display: 'flex', width: "40px"}}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
-        <Toolbar>
+      <AppBar position="fixed" open={open} >
+        <Toolbar sx={{
+          padding: '1.5rem',
+          background: '#25292E', 
+          }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none' }) }}
+            sx={{ mr: 2, ...(open && { display: 'none',
+            
+           }) }}
           >
-            <MenuIcon />
+            <MenuIcon sx={{  color: "#D7DCE3", }}/>
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
+          <Typography variant="h6" noWrap component="div"
+          className='fontClass'
+          sx={{
+            fontFamily: 'Roboto, sans-serif', 
+            fontSize: '1.4rem',
+            color: '#C7DDF8',
+            transition: '0.2s ease', 
+            '&:hover': {
+              color: '#DAEBFF',
+              transform: 'scale(1.05)'
+            }
+          }}>
             Mali Rivera
           </Typography>
         </Toolbar>
@@ -124,14 +140,26 @@ export default function NavBar() {
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
+            boxShadow: 'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px',
+            padding: '0 1rem',
+            background: '#25292E', 
           },
         }}
         variant="persistent"
         anchor="left"
         open={open}
       >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
+
+        <DrawerHeader >
+          <IconButton onClick={handleDrawerClose}
+          sx={{ 
+            color: "#D7DCE3", 
+            '&:hover': {
+            color: '#73A4D4',
+            transform: 'scale(1.1)'
+          }}
+        }
+          >
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
@@ -140,10 +168,19 @@ export default function NavBar() {
             <ListItem disablePadding component={Link} to="/">
               <ListItemButton
                sx={{
-                color: "#171A19", 
+                color: "#D7DCE3", 
+                margin: '0.5rem 0', 
+                border: '1px solid white', 
+                boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
+                transition: '0.2s ease', 
+                borderRadius: '2rem', 
+                '&:hover': {
+                  color: '#C8DDFB',
+                  transform: 'scale(1.1)'
+                }
                }}>
                 <ListItemIcon>
-                  <HomeOutlinedIcon /> 
+                  <HomeOutlinedIcon sx={{ color: "#D7DCE3", }}/> 
                 </ListItemIcon>
                 <ListItemText primary="Home" />
               </ListItemButton>
@@ -151,10 +188,19 @@ export default function NavBar() {
             <ListItem disablePadding component={Link} to="/work">
               <ListItemButton
                sx={{
-                color: "#171A19", 
+                color: "#D7DCE3", 
+                transition: '0.2s ease', 
+                margin: '0.5rem 0', 
+                border: '1px solid white', 
+                boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
+                borderRadius: '2rem', 
+                '&:hover': {
+                  color: '#C8DDFB',
+                  transform: 'scale(1.1)'
+                }
                }}>
                 <ListItemIcon>
-                  <WorkOutlineIcon /> 
+                  <WorkOutlineIcon sx={{ color: "#D7DCE3", }}/> 
                 </ListItemIcon>
                 <ListItemText primary="Work" />
               </ListItemButton>
@@ -162,10 +208,19 @@ export default function NavBar() {
             <ListItem disablePadding component={Link} to="/about">
               <ListItemButton
                sx={{
-                color: "#171A19", 
+                color: "#D7DCE3", 
+                transition: '0.2s ease', 
+                margin: '0.5rem 0', 
+                border: '1px solid white', 
+                boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
+                borderRadius: '2rem', 
+                '&:hover': {
+                  color: '#C8DDFB',
+                  transform: 'scale(1.1)'
+                } 
                }}>
                 <ListItemIcon>
-                  <SummarizeOutlinedIcon/> 
+                  <SummarizeOutlinedIcon sx={{ color: "#D7DCE3", }}/> 
                 </ListItemIcon>
                 <ListItemText primary="About" />
               </ListItemButton>
@@ -173,10 +228,19 @@ export default function NavBar() {
             <ListItem disablePadding component={Link} to="/contact">
               <ListItemButton
                sx={{
-                color: "#171A19", 
+                color: "#D7DCE3", 
+                transition: '0.2s ease', 
+                margin: '0.5rem 0', 
+                border: '1px solid white', 
+                boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
+                borderRadius: '2rem', 
+                '&:hover': {
+                  color: '#C8DDFB',
+                  transform: 'scale(1.1)'
+                }
                }}>
                 <ListItemIcon>
-                  <ContactsOutlinedIcon /> 
+                  <ContactsOutlinedIcon sx={{ color: "#D7DCE3", }}/> 
                 </ListItemIcon>
                 <ListItemText primary="Contact" />
               </ListItemButton>
