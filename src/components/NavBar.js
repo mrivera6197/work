@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { styled, useTheme, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -24,6 +24,7 @@ import ContactsOutlinedIcon from '@mui/icons-material/ContactsOutlined';
 import { keyframes } from '@emotion/react';
 
 import { Link } from "react-router-dom"
+import { TypeSpecimen } from '@mui/icons-material';
 
 const drawerWidth = 200;
 
@@ -108,10 +109,15 @@ export default function NavBar() {
 
   return (
     <ThemeProvider theme={theme}>
-
-    <Box sx={{ display: 'flex', width: "40px"}}>
+    <Box sx={{ 
+      display: 'flex', 
+      width: "40px"
+      }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open} >
+      <AppBar 
+      position="fixed" 
+      open={open} 
+      >
         <Toolbar sx={{
           padding: '1rem',
           background: '#202121', 
@@ -122,17 +128,24 @@ export default function NavBar() {
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
-            sx={{ mr: 2, ...(open && { display: 'none',
-            
-           }) }}
+            sx={{ mr: 2, ...(open && {
+               display: 'none',
+             }) 
+          }}
           >
-            <MenuIcon sx={{  color: "#D7DCE3", }}/>
+          <MenuIcon 
+          sx={{  color: "#D7DCE3", }}
+          />
           </IconButton>
-          <Typography variant="h6" noWrap component="div"
-          className='fontClass'
+          <Typography 
+          variant="h6" 
+          noWrap 
+          component="div"
           sx={{
-            fontSize: '1.4rem',
+            fontSize: '1.6rem',
             color: '#C7DDF8',
+            fontFamily: '"Baloo Chettan 2", sans-serif;',
+            fontWeight: 'bold',
             transition: '0.2s ease', 
             '&:hover': {
               color: '#DAEBFF',
@@ -160,9 +173,9 @@ export default function NavBar() {
         anchor="left"
         open={open}
       >
-
         <DrawerHeader >
-          <IconButton onClick={handleDrawerClose}
+          <IconButton 
+          onClick={handleDrawerClose}
           sx={{ 
             color: "#D7DCE3", 
             '&:hover': {
@@ -175,94 +188,136 @@ export default function NavBar() {
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List sx={{ animation: `${open ? fadeInAnimation : ''} 1s ease-in-out` }}>
-            <ListItem disablePadding component={Link} to="/" sx={{ perspective: '1000px'}}>
+        <List sx={{ 
+          animation: `${open ? fadeInAnimation : ''} 1s ease-in-out` 
+          }}>
+            <ListItem 
+            disablePadding 
+            component={Link} 
+            to="/" 
+            sx={{ perspective: '1000px'}}
+            >
               <ListItemButton
-               sx={{
-                color: "#D7DCE3", 
-                margin: '0.5rem 0', 
-                border: '1px solid white', 
-                boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
-                transition: '0.2s ease', 
-                transformStyle: 'preserve-3d', 
-                transform: 'rotateY(-33deg)', 
-                borderRadius: '2rem', 
-                '&:hover': {
-                  color: '#C8DDFB',
-                  transform: 'rotateY(0deg)', 
-                }
-               }}>
+                sx={{
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  alignItems: 'center', 
+                  background: 'rgba(39, 124, 199, 0.8)',
+                  margin: '0.5rem 0', 
+                  padding: 0, 
+                  border: '2px solid  #C7DDF8', 
+                  boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
+                  transition: '0.2s ease', 
+                  transformStyle: 'preserve-3d', 
+                  transform: 'rotateY(-33deg)', 
+                  borderRadius: '2rem', 
+                  '&:hover': {
+                    background: '#C7DDF8', 
+                    color: '#C7DDF8', 
+                    border: '2px solid #C7DDF8',
+                    transform: 'rotateY(0deg)', 
+                  }
+                 }}>
                 <ListItemIcon>
-                  <HomeOutlinedIcon sx={{ color: "#D7DCE3", }}/> 
+                  <HomeOutlinedIcon sx={{
+                    marginLeft: 1
+                  }}/>
                 </ListItemIcon>
-                <ListItemText primary="Home" />
+                <ListItemText>
+                <Typography
+                      sx={{
+                        fontWeight: 'bold',
+                        fontFamily: '"Baloo Chettan 2", sans-serif',
+                        color: 'rgba(7, 8, 8, 0.8)', 
+                      }}
+                  >
+                    Home
+                  </Typography>
+                </ListItemText>
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding component={Link} to="/work"  sx={{ perspective: '1000px'}}>
               <ListItemButton
-               sx={{
-                color: "#D7DCE3", 
-                transition: '0.2s ease', 
-                margin: '0.5rem 0', 
-                border: '1px solid white', 
-                transformStyle: 'preserve-3d', 
-                transform: 'rotateY(34deg)', 
-                boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
-                borderRadius: '2rem', 
-                '&:hover': {
-                  color: '#C8DDFB',
-                  transform: 'rotateY(0deg)', 
-                }
-               }}>
+                sx={{
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  alignItems: 'center', 
+                  background: 'rgba(39, 124, 199, 0.8)',
+                  margin: '0.5rem 0', 
+                  padding: 0, 
+                  border: '2px solid  #C7DDF8', 
+                  boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
+                  transition: '0.2s ease', 
+                  transformStyle: 'preserve-3d', 
+                  transform: 'rotateY(33deg)', 
+                  borderRadius: '2rem', 
+                  '&:hover': {
+                    background: '#C7DDF8', 
+                    color: '#C7DDF8', 
+                    border: '2px solid #C7DDF8',
+                    transform: 'rotateY(0deg)', 
+                  }
+                 }}>
                 <ListItemIcon>
-                  <WorkOutlineIcon sx={{ color: "#D7DCE3", }}/> 
+                  <WorkOutlineIcon 
+                  sx={{  marginLeft: 1 }}
+                  /> 
                 </ListItemIcon>
-                <ListItemText primary="Work" />
+                <ListItemText>
+                  <Typography
+                      sx={{
+                        fontWeight: 'bold',
+                        fontFamily: '"Baloo Chettan 2", sans-serif',
+                        color: 'rgba(7, 8, 8, 0.8)', 
+                      }}
+                  >
+                    Work
+                  </Typography>
+                </ListItemText>
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding component={Link} to="/about" sx={{ perspective: '1000px'}} >
               <ListItemButton
                sx={{
-                color: "#D7DCE3", 
-                transition: '0.2s ease', 
-                margin: '0.5rem 0', 
-                border: '1px solid white', 
-                transformStyle: 'preserve-3d', 
-                transform: 'rotateY(-35deg)', 
-                boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
-                borderRadius: '2rem', 
-                '&:hover': {
-                  color: '#C8DDFB',
-                  transform: 'rotateY(0deg)', 
-                } 
-               }}>
+                  display: 'flex', 
+                  justifyContent: 'center', 
+                  alignItems: 'center', 
+                  background: 'rgba(39, 124, 199, 0.8)',
+                  margin: '0.5rem 0', 
+                  padding: 0, 
+                  border: '2px solid  #C7DDF8', 
+                  boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
+                  transition: '0.2s ease', 
+                  transformStyle: 'preserve-3d', 
+                  transform: 'rotateY(-33deg)', 
+                  borderRadius: '2rem', 
+                  '&:hover': {
+                    background: '#C7DDF8', 
+                    color: '#C7DDF8', 
+                    border: '2px solid #C7DDF8',
+                    transform: 'rotateY(0deg)', 
+                  }
+                 }}>
                 <ListItemIcon>
-                  <SummarizeOutlinedIcon sx={{ color: "#D7DCE3", }}/> 
+                  <SummarizeOutlinedIcon 
+                  sx={{ 
+                    marginLeft:1, 
+                    }}/> 
                 </ListItemIcon>
-                <ListItemText primary="About" />
+                <ListItemText>
+                <Typography
+                      sx={{
+                        fontWeight: 'bold',
+                        fontFamily: '"Baloo Chettan 2", sans-serif',
+                        color: 'rgba(7, 8, 8, 0.8)', 
+                      }}
+                  >
+                    About
+                  </Typography>
+                </ListItemText>
               </ListItemButton>
             </ListItem>
             <ListItem disablePadding component={Link} to="/contact" sx={{ perspective: '1000px'}}>
-              <ListItemButton
-               sx={{
-                color: "#D7DCE3", 
-                transition: '0.2s ease', 
-                margin: '0.5rem 0', 
-                border: '1px solid white', 
-                transformStyle: 'preserve-3d', 
-                transform: 'rotateY(38deg)', 
-                boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;',
-                borderRadius: '2rem', 
-                '&:hover': {
-                  color: '#C8DDFB',
-                  transform: 'rotateY(0deg)', 
-                }
-               }}>
-                <ListItemIcon>
-                  <ContactsOutlinedIcon sx={{ color: "#D7DCE3", }}/> 
-                </ListItemIcon>
-                <ListItemText primary="Contact" />
-              </ListItemButton>
             </ListItem>
 
         </List>

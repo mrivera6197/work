@@ -1,18 +1,14 @@
 
 const Feeling = ({ feeling }) => {
 
-
-
     return (
 
-        <>
-            <div className="feelingDiv opacity">
+            <div className="feelingDiv opacity" >
                 <div className={`${feeling}`}>
 
                 </div>
 
             </div>
-        </>
     )
 }
 

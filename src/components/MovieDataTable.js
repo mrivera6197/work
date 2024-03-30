@@ -1,7 +1,6 @@
 import { DataGrid } from "@mui/x-data-grid"
 
 const MovieDataTable = ({data}) => {
-    console.log(data)
 
     const columns = [
         {field: "rank", headerName: 'Rank', width: "100"}, 

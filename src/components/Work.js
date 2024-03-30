@@ -1,102 +1,190 @@
-import { Typography, Button, Link } from "@mui/material";
+import { Typography } from "@mui/material";
 import Box from "@mui/material/Box"
 import vid from "../images/css.mp4"
 import calm from "../images/calm.mp4"
-import budget from "../images/budget.mp4"
 import budgetFinal from "../images/dashFinal.mp4"
 import generator from "../images/generator.mp4"
 import movie from '../images/movieApp.mp4'
 import Footer from "./Footer"
+import React from 'react'; 
 
-import React, { useRef } from 'react'; 
-import { useNavigate } from 'react-router-dom';
 
 
 const Work = () => {
 
-  const navigate = useNavigate();
-  const scrollRef = useRef(null);
-
-  const navToAbout = () => {
-      navigate('/about');
-      scrollToTop();
-    };
-
-    const scrollToTop = () => {
-      if (scrollRef.current) {
-          scrollRef.current.scrollTo({
-              top:0, 
-              behavior: "instant",
-          })
-      } else {
-          window.scrollTo({ top: 0, behavior: 'instant' });
-      }
-    }
-
     return (
         <>
-        <Box sx={{ width: "100%", height: "500vh", display: "flex", 
-        justifyContent: "flex-start", alignItems: "center", flexDirection: "column", 
-        marginTop: 10, pl: "20", padding: 2}}>
-
-          <Box sx={{ width: "80%", height: "100vh", display: "flex", 
-        justifyContent: "flex-start", alignItems: "center", flexDirection: "column", 
-        marginTop: 10 }}>
-            <div className="workDiv">
-              <h3>Welcome to the Work Page!</h3>
-              <p>This page showcases design, css, and React.js skills.</p>
-              <h4>Scroll to See Portfolio Site </h4>
-            </div>
-            <Link sx={{fontSize:20, marginTop:10}} target='_blank' href='https://neon-pavlova-ab8313.netlify.app/'>Check out Lemoncub</Link>
-            <div className="portfolio reveal">
+        <Box sx={{ 
+          width: "100%", 
+          display: "flex", 
+           justifyContent: "flex-start", 
+           alignItems: "center", 
+           flexDirection: "column", 
+            marginTop: 10, 
+            pl: "20", 
+            padding: 2,
+            marginBottom: 20, 
+            }}>
+          <Box 
+          sx={{ 
+            width: "80%", 
+            display: "flex", 
+            justifyContent: "flex-start", 
+            alignItems: "center", 
+            flexDirection: "column", 
+            marginTop: 10,
+            }}>
+            <Box sx={{
+              padding: 2,
+            }}>
+            <Typography sx={{
+              margin:1,
+              fontFamily: '"Baloo Chettan 2", sans-serif;',
+              color: 'rgba(7, 8, 8, 0.8)', 
+              fontWeight: 'bold', 
+              fontSize: 25, 
+              animation: 'twistIn 1s ease-in-out forwards',
+              transformStyle: 'preserve3d;',
+              transition: 'transform 0.5s;',
+              '&:hover': {
+                animation: 'twistIn 1s ease-in-out forwards',
+              }
+            }}>
+              Welcome to the Work Page!
+              </Typography>
+              <Typography sx={{
+                    fontFamily: '"Baloo Chettan 2", sans-serif;',
+                    fontWeight: 'bold',
+                    color: 'rgba(7, 8, 8, 0.8)', 
+                }}>  
+                This page showcases design, css, and React.js skills.
+                </Typography>
+                <Typography 
+                    sx={{
+                        fontFamily: '"Baloo Chettan 2", sans-serif;',
+                        color: 'rgba(7, 8, 8, 0.8)', 
+                        marginBottom: 5, 
+                    }}> 
+                    Scroll to See Portfolio Site 
+                    </Typography>
+            </Box>
+            <Box sx={{
+            }} className="portfolio reveal">
               <video src={vid} height={570} autoPlay={true} loop={true} />
-            </div>
+            </Box>
           </Box>
 
-          <Box sx={{ width: "80%", height: "150vh", display: "flex", flexDirection: "column",
-        justifyContent: "space-around", alignItems: "center"}}>
+          <Box sx={{ 
+            width: "80%", 
+            marginTop: 15,  
+            display: "flex", 
+            flexDirection: "column",
+            justifyContent: "space-around", 
+            alignItems: "center",
+            padding: 10
+            }}>
           <div className="leftShow reveal">
-            <p>Keyframe Animations</p>
+          <Typography
+                sx={{
+                  fontFamily: '"Baloo Chettan 2", sans-serif;',
+                  color: 'rgba(7, 8, 8, 0.8)', 
+                  marginBottom: 5, 
+                  fontSize: 25,
+                  fontWeight: 'bold', 
+              }}
+          >Keyframe Animations</Typography>
               <video src={calm} height={550} autoPlay={true} loop={true}  
                className=""/>
 
           </div>
           <div className="rightShow reveal">
-            <p>Random Generation</p>
+            <Typography
+                 sx={{
+                  fontFamily: '"Baloo Chettan 2", sans-serif;',
+                  color: 'rgba(7, 8, 8, 0.8)', 
+                  marginBottom: 5, 
+                  fontSize: 25,
+                  fontWeight: 'bold', 
+              }}
+            >Random Generation</Typography>
               <video src={generator} height={600} autoPlay={true} loop={true}  
                className=""/>
 
           </div>
           </Box>
-          <Box sx={{ width: "80vw", height: "60vh", display: "flex", 
-        justifyContent: "flex-start", alignItems: "center", flexDirection: "column",
-        marginTop: 10, mb:10, }}
+          <Box 
+          sx={{ 
+            width: "80vw", 
+            display: "flex", 
+            justifyContent: "flex-start", 
+            alignItems: "center", 
+            flexDirection: "column",
+            marginTop: 10, 
+            mb:10, 
+            padding: 5, 
+          }}
         className='reveal'>
           <div className="budget">
-          <h3>Budgeting Application</h3>
-          <p>Java Spring Boot, Chart.js, Material UI</p>
+          <Typography
+                sx={{
+                  fontFamily: '"Baloo Chettan 2", sans-serif;',
+                  color: 'rgba(7, 8, 8, 0.8)', 
+                  marginBottom: 5, 
+                  fontSize: 25,
+                  fontWeight: 'bold', 
+              }}
+          >Budgeting Application</Typography>
+          <Typography
+                sx={{
+                  fontFamily: '"Baloo Chettan 2", sans-serif;',
+                  color: 'rgba(7, 8, 8, 0.8)', 
+                  marginBottom: 5, 
+                  fontSize: 20,
+              }}
+          >Java Spring Boot, Chart.js, Material UI</Typography>
           </div>
         <video src={budgetFinal} height={450} autoPlay={true} loop={true} />
           </Box>
-          <Box sx={{ width: '80vw', height: '100vh', display: 'flex', 
-          flexDirection: 'column', marginTop: '5rem', marginBottom: 10}}>
-            <Box className='movieApp reveal'>
+          <Box sx={{ 
+            width: '80vw', 
+            height: '100vh', 
+            display: 'flex', 
+            flexDirection: 'column', 
+             marginTop: '5rem', 
+             marginBottom: 10}}>
+            <Box className='movieApp reveal' sx={{
+              marginBottom: 10, 
+            }}>
               <Box sx={{ marginBottom: 5}}>
-              <Typography className="movieTitle">Movie Application</Typography>
-              <Typography>Node.js and MongoDB for data persistence</Typography>
-              <Typography>Express, Google Cloud to store images</Typography>
+              <Typography 
+                sx={{
+                  fontFamily: '"Baloo Chettan 2", sans-serif;',
+                  color: 'rgba(7, 8, 8, 0.8)', 
+                  marginBottom: 5, 
+                  fontSize: 25,
+                  fontWeight: 'bold', 
+              }}
+              >Movie Application</Typography>
+              <Typography
+                sx={{
+                  fontFamily: '"Baloo Chettan 2", sans-serif;',
+                  color: 'rgba(7, 8, 8, 0.8)', 
+                  fontSize: 20,
+              }}
+              >Node.js and MongoDB for data persistence</Typography>
+              <Typography
+                sx={{
+                  fontFamily: '"Baloo Chettan 2", sans-serif;',
+                  color: 'rgba(7, 8, 8, 0.8)', 
+                  fontSize: 20,
+              }}
+              >Express, Google Cloud to store images</Typography>
               </Box>
 
               <video src={movie} height={650} autoPlay={true} loop={true} ></video>
             </Box>
 
           </Box>
-
-          <div>
-            <button 
-            className="contactButton aboutButton"
-            onClick={navToAbout}>About Page</button>
-          </div>
 
         </Box>
         <Footer/>

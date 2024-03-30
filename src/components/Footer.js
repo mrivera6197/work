@@ -30,7 +30,7 @@ export default function Footer() {
   }
 
   return (
-    <Box sx={{ width: "100%", mt: 4, mb: 5}}>
+    <Box sx={{ width: "100%", mt: 20, mb: 5}}>
       <BottomNavigation
         showLabels
         value={value}
@@ -39,25 +39,42 @@ export default function Footer() {
         }}
       > 
         <BottomNavigationAction 
-        label="Home" 
         value={value} 
         onClick={() => navigate("/")}
-        icon={<HomeOutlinedIcon />} />
+        icon={<HomeOutlinedIcon fontSize='small'
+        sx={{ 
+          color: 'rgba(39, 124, 199, 0.8)',
+          '&:hover': {
+            color: 'rgba(92, 167, 228, 0.8)',
+          }
+          }}
+          />} 
+          />
         <BottomNavigationAction
-        label="Work"
         value={value}
         onClick={() => navigate("/work")}
-        icon={<WorkOutlineIcon/>} />
+        icon={<WorkOutlineIcon 
+        fontSize='small'
+        sx={{ 
+          color: 'rgba(39, 124, 199, 0.8)',
+          '&:hover': {
+            color: 'rgba(92, 167, 228, 0.8)',
+          }
+          }}
+        />} />
         <BottomNavigationAction
-        label="About"
+  
         value={value}
         onClick={() => navigate("/about")}     
-        icon={<SummarizeOutlinedIcon />} />
-        <BottomNavigationAction
-        label="Contact"
-        value={value}
-        onClick={() => navigate("/contact")}     
-        icon={<ContactsOutlinedIcon />} />
+        icon={<SummarizeOutlinedIcon 
+        fontSize='small'
+        sx={{ 
+          color: 'rgba(39, 124, 199, 0.8)',
+          '&:hover': {
+            color: 'rgba(92, 167, 228, 0.8)',
+          }
+          }}
+        />} />
       </BottomNavigation>
       
     </Box>
