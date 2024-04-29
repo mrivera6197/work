@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios"
 
-import { Box, Toolbar, Container, Grid, Paper, Typography, Button} from "@mui/material";
+import { Box, Toolbar, Container, Grid, Typography,} from "@mui/material";
 
 import MovieDataTable from "./MovieDataTable"; 
 import MovieChart from "./MovieChart";
