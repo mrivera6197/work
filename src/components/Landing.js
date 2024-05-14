@@ -1,5 +1,5 @@
 import { Typography, Box } from '@mui/material';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useContext } from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
 import { homeData } from './dummyData';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
@@ -8,13 +8,14 @@ import Questions from './Questions';
 import Projects from './Projects';
 import LinearProgress from '@mui/material/LinearProgress';
 import Movie from './Movie';
+import { useDarkModeContext } from '../hooks/DarkModeProvider';
 
 const Landing = () => {
     const [section, setSection] = useState('home'); 
-    const [lightMode, setLightMode] = useState(false);
     const [loaded, setLoaded] = useState(false); 
     const [selectedProject, setSelectedProject] = useState(false); 
     const targetRef = useRef(null);
+    const { isDarkMode, toggleDarkMode } = useDarkModeContext(); 
 
     useEffect(() => {
         setTimeout(() => {
@@ -24,7 +25,6 @@ const Landing = () => {
 
     const scrollToMovies = () => {
         if (targetRef.current) {
-            console.log("target", targetRef)
             targetRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }
     };
@@ -51,12 +51,12 @@ const Landing = () => {
             justifyContent: 'center', 
             alignItems: 'center',
             borderRadius: '8px',
-            background: !loaded ? '#151616' : (lightMode ? '#FBFBFB' : '#151616'),
+            background: !loaded ? '#151616' : (!isDarkMode ? '#FBFBFB' : '#151616'),
             }}>
             <Grid xs={12} style={{display:"flex", flexDirection: 'column', alignItems:'flex-end',
             justifyContent: 'center', width: '100%'}}>
-                    <button style={{margin:5, marginRight: 10, border: 'none', background:'none'}} onClick={() => setLightMode(!lightMode)}>{
-                        lightMode ? <Brightness1Icon fontSize='small' style={{color:'rgba(26, 26, 26, 0.851)'}}/> : <WbSunnyIcon fontSize='small' style={{color:'rgba(196, 196, 187, 0.93)'}}/>
+                    <button style={{margin:5, marginRight: 10, border: 'none', background:'none'}} onClick={() => toggleDarkMode()}>{
+                        !isDarkMode ? <Brightness1Icon fontSize='small' style={{color:'rgba(26, 26, 26, 0.851)'}}/> : <WbSunnyIcon fontSize='small' style={{color:'rgba(196, 196, 187, 0.93)'}}/>
                     }</button>
                     <Grid xs={12} style={{ 
                             height: '100vh', 
@@ -65,7 +65,7 @@ const Landing = () => {
                             alignItems: 'center',
                             width: '100%',
                             boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
-                            background: lightMode ? '#FBFBFB' : '#181818',
+                            background: !isDarkMode ? '#FBFBFB' : '#181818',
                             borderRadius: '8px',
                             margin: 5,                            
                             }}
@@ -81,7 +81,7 @@ const Landing = () => {
                             justifyContent: 'center',
                             borderRadius: '8px',
                             }}
-                            className={lightMode ? 'backdrop' : 'backdropDark'}
+                            className={!isDarkMode ? 'backdrop' : 'backdropDark'}
                             >
     
                         <Grid xs={4} style={{ width: '40%'}}>
@@ -96,7 +96,7 @@ const Landing = () => {
                             <Typography 
                             style={{fontSize:'2rem', 
                             fontFamily: '"Nunito Sans", sans-serif',
-                            color: lightMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
+                            color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
                             animation: 'twistIn 1s ease-in-out forwards',
                             transformStyle: 'preserve3d;',
                             transition: 'transform 0.5s;',
@@ -106,7 +106,7 @@ const Landing = () => {
                         }}
                             >Mali Rivera</Typography>
                             <Typography 
-                            style={{fontSize:'16px', fontFamily: '"Nunito Sans", sans-serif',  color: lightMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',  animation: 'fadeIn 2s ease-in-out forwards',}}
+                            style={{fontSize:'16px', fontFamily: '"Nunito Sans", sans-serif',  color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',  animation: 'fadeIn 2s ease-in-out forwards',}}
                             >Designer & Software Engineer</Typography>
                             </div>
                             <div style={{
@@ -139,7 +139,7 @@ const Landing = () => {
                                             color: 'blue'
                                         }
                                         }} 
-                                        className={lightMode ? 'landingButton' : 'landingButtonDark'}
+                                        className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
                                         onClick={() => setSection('home')}
                                         >Home</button>
                                     <button style={
@@ -152,35 +152,35 @@ const Landing = () => {
                                         fontWeight: 'bold',
                                         fontFamily: '"Nunito Sans", sans-serif'
                                         }}
-                                        className={lightMode ? 'landingButton' : 'landingButtonDark'}
+                                        className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
                                         onClick={scrollToMovies}
                                         >Movies</button>
                                     <button style={
                                         {width: '50%', 
                                         fontSize:'16px',
                                         border: 'none',
-                                        color: lightMode ? '#292826' : '#E9E9E1',
+                                        color: !isDarkMode ? '#292826' : '#E9E9E1',
                                         background: 'none', 
                                         boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
                                         margin: 5, 
                                         fontWeight: 'bold',
                                         fontFamily: '"Nunito Sans", sans-serif'
                                         }}
-                                        className={lightMode ? 'landingButton' : 'landingButtonDark'}
+                                        className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
                                         onClick={() => setSection('projects')}
                                         >Projects</button>
                                     <button style={
                                         {width: '50%', 
                                         fontSize:'16px',
                                         border: 'none',
-                                        color: lightMode ? '#292826' : '#E9E9E1',
+                                        color: !isDarkMode ? '#292826' : '#E9E9E1',
                                         background: 'none', 
                                         boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
                                         margin: 5, 
                                         fontWeight: 'bold',
                                         fontFamily: '"Nunito Sans", sans-serif'
                                         }}
-                                        className={lightMode ? 'landingButton' : 'landingButtonDark'}
+                                        className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
                                         onClick={() => setSection('questions')}
                                         >Qs</button>
                                 </div>
@@ -209,7 +209,7 @@ const Landing = () => {
                                             width: '21%', padding: 15, 
                                             display: 'flex', justifyContent:'center', alignItems: 'flex-end'
                                             , textAlign: 'left',
-                                            background: lightMode ? '#fff' : 'none',
+                                            background: !isDarkMode ? '#fff' : 'none',
                                             overflow:'hidden',
                                             borderRadius:'8px',
                                             animation: 'fadeIn 1s ease-in-out forwards',
@@ -220,7 +220,7 @@ const Landing = () => {
                                                  lineHeight:'1.3rem',
                                                  fontSize: '16px',
                                                  fontFamily: '"Nunito Sans", sans-serif',
-                                                 color: lightMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
+                                                 color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
                                                 }}>{line}</Typography>
                                         ))
                                     )} 
@@ -235,14 +235,14 @@ const Landing = () => {
                                 justifyContent:'center', alignItems: 'flex-start', width: '60%'
                                 }}
                                 >
-                                 <Questions lightMode={lightMode}/>
+                                 <Questions />
                                 </Grid>
     
                             ): <></>}
                             {section && section === 'projects' ? (
                                 <Grid xs={6} style={{display:'flex',
                                 justifyContent:'center', alignItems: 'flex-start', width: '60%',}}>
-                                 <Projects lightMode={lightMode} setSelectedProject={setSelectedProject}/>
+                                 <Projects setSelectedProject={setSelectedProject}/>
                                 </Grid>
     
                             ): <></>}
@@ -252,7 +252,7 @@ const Landing = () => {
                     </Grid>
     
                 </Grid>
-                <Movie lightMode={lightMode} ref={targetRef}/>
+                <Movie ref={targetRef}/>
         </Grid>
         )}
             </>

@@ -89,6 +89,19 @@
   color: rgba(159, 159, 150, 0.589) !important;
 }
 
+.react-datepicker {
+  background-color: rgba(196, 196, 187, 0.93);
+}
+
+.react-datepicker-popper {
+  z-index: 11 !important;
+}
+
+.react-datepicker__month-container {
+
+}
+
+
 .landingButton {
   color: rgba(26, 26, 26, 0.851) !important;
 }
@@ -105,7 +118,7 @@
 }
 
 .musicContainerDark {
-  background-image: url(./images/interestingdark.jpg);
+  /* background-image: url(./images/interestingdark.jpg); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
