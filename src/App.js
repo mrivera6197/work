@@ -24,7 +24,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <DarkModeProvider>
       <Routes>
-        <Route path="/" Component={Landing}/>
+        <Route path="/" Component={Landing}/>        
       </Routes>
       </DarkModeProvider>
     </ThemeProvider>

@@ -37,11 +37,11 @@ const Projects = () => {
             >
                 {
                     !videoPopup ? (
-                        <Typography style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:16,  fontFamily: '"Nunito Sans", sans-serif'
+                        <Typography style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:14,  fontFamily: '"Nunito Sans", sans-serif'
                         ,fontWeight:'bold', textDecoration:"underline"}}>Music App</Typography>
                     ) : videoPopup === termVid && (
-                        <div style={{fontSize:16,  fontFamily: '"Nunito Sans", sans-serif'}}>
-                        <video src={videoPopup} muted height={350} autoPlay={true} loop={true} 
+                        <div style={{fontSize:14,  fontFamily: '"Nunito Sans", sans-serif'}}>
+                        <video src={videoPopup} muted height={250} autoPlay={true} loop={true} 
                         style={{borderRadius:"8px"}}/> 
                         <div style={{color: !isDarkMode ? '#151616' : '#FBFBFB' }}>
                             <h3>Music Playlist App Designed for Runners </h3>
@@ -65,12 +65,12 @@ const Projects = () => {
             >
                 {
                     !videoPopup ? (
-                        <Typography style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:16,  fontFamily: '"Nunito Sans", sans-serif'
+                        <Typography style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:14,  fontFamily: '"Nunito Sans", sans-serif'
                         ,fontWeight:'bold', textDecoration:"underline"}}>Budgeting App</Typography>
                     ) : videoPopup === budget && (
-                        <div style={{fontSize:16,  fontFamily: '"Nunito Sans", sans-serif'}}>
-                        <video src={videoPopup} muted height={350} autoPlay={true} loop={true} style={{borderRadius:'8px'}} /> 
-                        <div style={{color: !isDarkMode ? '#151616' : '#FBFBFB' }}>
+                        <div style={{fontSize:14,  fontFamily: '"Nunito Sans", sans-serif'}}>
+                        <video src={videoPopup} muted height={250} autoPlay={true} loop={true} style={{borderRadius:'8px'}} /> 
+                        <div style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:14 }}>
                         <h3>Budgeting App</h3>
                         <p>Java Spring Boot and MariaDB backend, React frontend</p>
                          <p>Material UI components, Chart JS visualizations</p>
@@ -92,11 +92,11 @@ const Projects = () => {
                 >
                     {
                         !videoPopup ? (
-                            <Typography style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:16,  fontFamily: '"Nunito Sans", sans-serif'
+                            <Typography style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:14,  fontFamily: '"Nunito Sans", sans-serif'
                             ,fontWeight:'bold', textDecoration:"underline"}}>lemoncub</Typography>
                         ) : videoPopup === lemoncub && (
-                            <div style={{fontSize:16,  fontFamily: '"Nunito Sans", sans-serif'}}>
-                            <video src={videoPopup} muted height={400} autoPlay={true} loop={true} style={{borderRadius:'8px'}}/> 
+                            <div style={{fontSize:14,  fontFamily: '"Nunito Sans", sans-serif'}}>
+                            <video src={videoPopup} muted height={250} autoPlay={true} loop={true} style={{borderRadius:'8px'}}/> 
                             <div style={{color: !isDarkMode ? '#151616' : '#FBFBFB' }}>
                                 <h3>Artist Portfolio App</h3>
                                 <p>Front-end React App focused on design, transitions, and animations</p>
@@ -118,10 +118,10 @@ const Projects = () => {
             >
                 {
                     !videoPopup ? (
-                        <Typography style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:16,  fontFamily: '"Nunito Sans", sans-serif'
+                        <Typography style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:14,  fontFamily: '"Nunito Sans", sans-serif'
                         ,fontWeight:'bold', textDecoration:"underline"}}>Old Resume</Typography>
                     ) : videoPopup === resume && (
-                        <video src={videoPopup} muted height={400} autoPlay={true} loop={true} style={{borderRadius:'8px'}}/> 
+                        <video src={videoPopup} muted height={250} autoPlay={true} loop={true} style={{borderRadius:'8px'}}/> 
                     )
                 }
             </Grid> 
@@ -137,12 +137,12 @@ const Projects = () => {
             >
                 {
                     !videoPopup ? (
-                        <Typography style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:16,  fontFamily: '"Nunito Sans", sans-serif'
+                        <Typography style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:14,  fontFamily: '"Nunito Sans", sans-serif'
                         ,fontWeight:'bold', textDecoration:"underline"}}>Gene Computation</Typography>
                     ) : videoPopup === pythonApp && (
                         <div style={{color: !isDarkMode ? '#151616' : '#FBFBFB' }}>
-                        <video src={videoPopup} muted height={300} autoPlay={true} loop={true} style={{borderRadius:'8px'}}/> 
-                        <div style={{color: !isDarkMode ? '#151616' : '#FBFBFB' }}>
+                        <video src={videoPopup} muted height={200} autoPlay={true} loop={true} style={{borderRadius:'8px'}}/> 
+                        <div style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:14 }}>
                         <h3>Gene computation App</h3>
                         <p>Python, Matplotlib visualizations</p>
                         </div>
@@ -163,13 +163,13 @@ const Projects = () => {
             >
                 {
                     !videoPopup ? (
-                        <Typography style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:16,  fontFamily: '"Nunito Sans", sans-serif'
+                        <Typography style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:14,  fontFamily: '"Nunito Sans", sans-serif'
                         ,fontWeight:'bold', textDecoration:"underline"}}>Movie App</Typography>
                     ) : videoPopup === movieApp && (
                         <div style={{color: !isDarkMode ? '#151616' : '#FBFBFB' }}>
-                        <video src={videoPopup} muted height={400} autoPlay={true} loop={true} style={{borderRadius:'8px'}}/>
-                        <div>
-                            <h3>Movie Application</h3>
+                        <video src={videoPopup} muted height={300} autoPlay={true} loop={true} style={{borderRadius:'8px'}}/>
+                        <div style={{color: !isDarkMode ? '#151616' : '#FBFBFB',fontSize:14, }}>                
+                        <h3>Movie Application</h3>
                             <p>MongoDB, Mongoose, Express, and Node </p>
                         </div> 
                       </div>

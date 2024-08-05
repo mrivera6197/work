@@ -40,7 +40,7 @@ import { DarkMode } from '@mui/icons-material';
     datePicker: {
       padding: 0, 
       borderRadius: '10px',
-      height: "30px",
+      height: "22px",
       overflow: 'hidden',
       background: 'rgba(196, 196, 187, 0.3)'
     },
@@ -407,13 +407,13 @@ const Movie = forwardRef(({ }, ref) => {
             </Grid>
             </Grid>
         </Box>
-        <Box style={{ display:'flex', flexDirection: 'column', alignItems:'center', width: '100%', height: '80vh', borderRadius:'8px'}}
+        <Box style={{ display:'flex', flexDirection: 'column', alignItems:'center', width: '100%', height: '100vh', borderRadius:'8px'}}
         className={''} 
         >
-        <Grid container spacing={2} style={{width: '95%', height: '100%', display:'flex', flexDirection: 'column', alignItems:'center'}}>
+        <Grid container spacing={2} style={{width: '85%', height: '100%', display:'flex', flexDirection: 'column', alignItems:'center', marginTop:50}}>
         <Grid className='reveal' xs={12} style={{display: 'flex', justifyContent: 'center', border: '1px solid rgba(196, 196, 187, 0.3)', alignItems: 'center', paddingBottom: 150}}>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start',marginBottom: 100, marginRight: 50, }}>
-        <Typography style={{fontFamily: '"Nunito Sans", sans-serif', fontWeight: 'bold', fontSize: 18, color: isDarkMode ? "rgba(196, 196, 187, 1)" : 'rgba(26, 26, 26, 0.8)'}}>Chart JS</Typography>
+        <Typography style={{fontFamily: '"Nunito Sans", sans-serif', fontWeight: 'bold', fontSize: 16, color: isDarkMode ? "rgba(196, 196, 187, 1)" : 'rgba(26, 26, 26, 0.8)'}}>Chart JS</Typography>
              <div style={{display: 'flex',marginTop: 100}}>
             <Switch 
                 checked={togglePointStyle}

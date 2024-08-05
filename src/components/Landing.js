@@ -28,7 +28,7 @@ const Landing = () => {
           }
     };
 
-    return ( <>
+    return ( <div>
     {!loaded ? (
             <Box
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', 
@@ -93,7 +93,7 @@ const Landing = () => {
                                 margin: '4rem',
                                 }}>
                             <Typography 
-                            style={{fontSize:'2rem', 
+                            style={{fontSize:'1.5rem', 
                             fontFamily: '"Nunito Sans", sans-serif',
                             color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
                             animation: 'twistIn 1s ease-in-out forwards',
@@ -105,7 +105,7 @@ const Landing = () => {
                         }}
                             >Mali Rivera</Typography>
                             <Typography 
-                            style={{fontSize:'16px', fontFamily: '"Nunito Sans", sans-serif',  color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',  animation: 'fadeIn 2s ease-in-out forwards',}}
+                            style={{fontSize:'14px', fontFamily: '"Nunito Sans", sans-serif',  color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',  animation: 'fadeIn 2s ease-in-out forwards',}}
                             >Designer & Software Engineer</Typography>
                             </div>
                             <div 
@@ -128,7 +128,7 @@ const Landing = () => {
                                 }}>
                                     <button style={
                                         {width: '50%', 
-                                        fontSize:'16px',
+                                        fontSize:'14px',
                                         background: 'none', 
                                         border: 'none',
                                         padding: 5, 
@@ -144,7 +144,7 @@ const Landing = () => {
                                         >Home</button>
                                     <button style={
                                         {width: '50%', 
-                                        fontSize:'16px',
+                                        fontSize:'14px',
                                         background: 'none', 
                                         border: 'none',
                                         padding: 5, 
@@ -157,7 +157,7 @@ const Landing = () => {
                                         >Movies</button>
                                     <button style={
                                         {width: '50%', 
-                                        fontSize:'16px',
+                                        fontSize:'14px',
                                         border: 'none',
                                         color: !isDarkMode ? '#292826' : '#E9E9E1',
                                         background: 'none', 
@@ -172,7 +172,7 @@ const Landing = () => {
                                     <button style={
                                         {
                                         width: '50%', 
-                                        fontSize:'16px',
+                                        fontSize:'14px',
                                         border: 'none',
                                         color: !isDarkMode ? '#292826' : '#E9E9E1',
                                         background: 'none', 
@@ -207,7 +207,7 @@ const Landing = () => {
                                 <Link
                                 style={{
                                     width: '50%', 
-                                    fontSize:'16px',
+                                    fontSize:'14px',
                                     border: 'none',
                                     color: !isDarkMode ? '#292826' : '#E9E9E1',
                                     background: 'none', 
@@ -239,7 +239,7 @@ const Landing = () => {
                                     flexDirection: 'column',
                                     alignItems: 'flex-end',
                                     justifyContent:'flex-end',
-                                    fontSize: '16px',
+                                    fontSize: '14px',
                                     overflow:'hidden',
                                     margin:'4rem',
                                 }} >
@@ -256,7 +256,7 @@ const Landing = () => {
                                         homeData[0].bio.map((line ) => (
                                             <Typography style={{
                                                  lineHeight:'1.3rem',
-                                                 fontSize: '16px',
+                                                 fontSize: '14px',
                                                  fontFamily: '"Nunito Sans", sans-serif',
                                                  color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
                                                 }}>{line}</Typography>
@@ -293,7 +293,7 @@ const Landing = () => {
                 <Movie ref={targetRef}/>
         </Grid>
         )}
-            </>
+            </div>
         )
 }
 
