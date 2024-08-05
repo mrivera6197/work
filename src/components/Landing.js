@@ -1,5 +1,5 @@
-import { Typography, Box } from '@mui/material';
-import { useEffect, useState, useRef, useContext } from 'react';
+import { Typography, Box, Link } from '@mui/material';
+import { useEffect, useState, useRef } from 'react';
 import Grid from '@mui/material/Unstable_Grid2';
 import { homeData } from './dummyData';
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
@@ -13,7 +13,6 @@ import { useDarkModeContext } from '../hooks/DarkModeProvider';
 const Landing = () => {
     const [section, setSection] = useState('home'); 
     const [loaded, setLoaded] = useState(false); 
-    const [selectedProject, setSelectedProject] = useState(false); 
     const targetRef = useRef(null);
     const { isDarkMode, toggleDarkMode } = useDarkModeContext(); 
 
@@ -109,7 +108,8 @@ const Landing = () => {
                             style={{fontSize:'16px', fontFamily: '"Nunito Sans", sans-serif',  color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',  animation: 'fadeIn 2s ease-in-out forwards',}}
                             >Designer & Software Engineer</Typography>
                             </div>
-                            <div style={{
+                            <div 
+                            style={{
                                 display:'flex',
                                 flexDirection:'column',
                                 justifyContent:'center',
@@ -170,7 +170,8 @@ const Landing = () => {
                                         onClick={() => setSection('projects')}
                                         >Projects</button>
                                     <button style={
-                                        {width: '50%', 
+                                        {
+                                        width: '50%', 
                                         fontSize:'16px',
                                         border: 'none',
                                         color: !isDarkMode ? '#292826' : '#E9E9E1',
@@ -184,6 +185,43 @@ const Landing = () => {
                                         onClick={() => setSection('questions')}
                                         >Qs</button>
                                 </div>
+                            </div>
+                            <div 
+                            style={{
+                                display:'flex',
+                                flexDirection:'column',
+                                justifyContent:'center',
+                                alignItems:'flex-start',
+                                margin:"4rem",
+                                marginTop: '2rem',
+                                height:'20vh',
+                                borderRadius: '8px',
+                                animation: 'fadeIn 2s ease-in-out forwards',
+                                }}>
+                                <div style={{
+                                  display:'flex',
+                                  flexDirection:'column',
+                                  justifyContent:'center',
+                                  width: '50%',
+                                }}>
+                                <Link
+                                style={{
+                                    width: '50%', 
+                                    fontSize:'16px',
+                                    border: 'none',
+                                    color: !isDarkMode ? '#292826' : '#E9E9E1',
+                                    background: 'none', 
+                                    boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
+                                    margin: 5, 
+                                    fontWeight: 'bold',
+                                    fontFamily: '"Nunito Sans", sans-serif'
+                            }}
+                                href="https://www.linkedin.com/in/mali-rivera-41832a12b" 
+                                target={"_blank"}
+                                >LinkedIn
+                                </Link>
+                                </div>
+                                
                             </div>
                         </Grid>
     
@@ -242,7 +280,7 @@ const Landing = () => {
                             {section && section === 'projects' ? (
                                 <Grid xs={6} style={{display:'flex',
                                 justifyContent:'center', alignItems: 'flex-start', width: '60%',}}>
-                                 <Projects setSelectedProject={setSelectedProject}/>
+                                 <Projects/>
                                 </Grid>
     
                             ): <></>}

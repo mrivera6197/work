@@ -1,7 +1,9 @@
 import { Typography } from '@mui/material';
 import { questions } from './dummyData';
+import { useDarkModeContext } from '../hooks/DarkModeProvider';
 
-const Questions = ({lightMode}) => {
+const Questions = () => {
+    const { isDarkMode } = useDarkModeContext(); 
     return (
         <div 
         style={{ 
@@ -20,7 +22,7 @@ const Questions = ({lightMode}) => {
                         marginTop: 20, 
                         padding: 5, 
                         display: 'flex', flexWrap: 'wrap',
-                        background: lightMode ? '#fff' : 'none',
+                        background: !isDarkMode ? '#fff' : 'none',
                         overflow:'hidden',
                         borderRadius:'8px',
                         animation: 'fadeIn 1.5s ease-in-out forwards',
@@ -33,18 +35,18 @@ const Questions = ({lightMode}) => {
                             marginBottom: 10,  
                              fontSize: '16px',
                              fontFamily: '"Nunito Sans", sans-serif',
-                             color: lightMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
+                             color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
                             }}>{line.title}</Typography>              
                             )}
                         <Typography style={{
                              fontSize: '16px',
                              fontFamily: '"Nunito Sans", sans-serif',
-                             color: lightMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
+                             color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
                             }}>{line.question}</Typography>
                              <Typography style={{
                              fontSize: '16px',
                              fontFamily: '"Nunito Sans", sans-serif',
-                             color: lightMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
+                             color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
                             }}>{line.value}</Typography>
                         </div>
                     ))}
