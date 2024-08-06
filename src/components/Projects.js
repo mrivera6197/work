@@ -21,11 +21,10 @@ const Projects = () => {
         alignItems: 'center',
         justifyContent:'center',
         width:'100%',
-        height:'90vh',
         filter: videoPopup ? 'brightness(80%)' : ''
         }}>
-            <Grid container spacing={2} style={{width:'100%', height:'100%'}}> 
-            <Grid xs={videoPopup && videoPopup === termVid ? 6 : ( !videoPopup ? 2 : 1)} style={{height:"15vh", marginTop: videoPopup && videoPopup === termVid ? '20%' :"10%", background: videoPopup && videoPopup !== termVid ? 'none' : (!isDarkMode ? '#FBFBFB' : ''),
+            <Grid container spacing={2} style={{width:'100%'}}> 
+            <Grid xs={videoPopup && videoPopup === termVid ? 6 : ( !videoPopup ? 2 : 1)} style={{height:"10vh", marginTop: videoPopup && videoPopup === termVid ? '20%' :"10%", background: videoPopup && videoPopup !== termVid ? 'none' : (!isDarkMode ? '#FBFBFB' : ''),
                 borderRadius:'8px', display:"flex", flexDirection:'column', alignItems:"center", justifyContent:"center",
                 }}
                 onMouseEnter={(e) => {
@@ -45,7 +44,7 @@ const Projects = () => {
                         style={{borderRadius:"8px"}}/> 
                         <div style={{color: !isDarkMode ? '#151616' : '#FBFBFB' }}>
                             <h3>Music Playlist App Designed for Runners </h3>
-                            <p>Front-end React App inteacting with spotify and Geolocation APIs </p>
+                            <p>Front-end React App inteacting with Spotify and Geolocation APIs </p>
                             <p>Material UI components</p>
                         </div>
                         </div>
@@ -80,7 +79,7 @@ const Projects = () => {
                 }
                
             </Grid>
-            <Grid xs={videoPopup && videoPopup === lemoncub ? 6 : ( !videoPopup ? 2 : 1)} style={{height:"15vh",  marginTop: videoPopup && videoPopup === lemoncub ? '20%' :"22%", background: videoPopup && videoPopup !== lemoncub ? 'none' : (!isDarkMode ? '#FBFBFB' : ''),
+            <Grid xs={videoPopup && videoPopup === lemoncub ? 6 : ( !videoPopup ? 2 : 1)} style={{height:"10vh",  marginTop: videoPopup && videoPopup === lemoncub ? '20%' :"22%", background: videoPopup && videoPopup !== lemoncub ? 'none' : (!isDarkMode ? '#FBFBFB' : ''),
             borderRadius:'8px', display:"flex", flexDirection:'column', alignItems:"center",justifyContent:"center"
                     }}
                     onMouseEnter={(e) => {
@@ -106,7 +105,7 @@ const Projects = () => {
                         )
                     }
             </Grid>
-            <Grid xs={videoPopup && videoPopup === resume ? 6 : ( !videoPopup ? 2 : 0)} style={{height:"15vh",  marginTop: videoPopup && videoPopup === resume ? '60%' :"70%", background: videoPopup && videoPopup !== resume ? 'none' : (!isDarkMode ? '#FBFBFB' : ''),
+            <Grid xs={videoPopup && videoPopup === resume ? 6 : ( !videoPopup ? 2 : 0)} style={{height:"10vh",  marginTop: videoPopup && videoPopup === resume ? '60%' :"70%", background: videoPopup && videoPopup !== resume ? 'none' : (!isDarkMode ? '#FBFBFB' : ''),
             borderRadius:'8px', display:"flex", flexDirection:'column', alignItems:"center",justifyContent:"center",
                 }}
                 onMouseEnter={(e) => {
@@ -125,7 +124,7 @@ const Projects = () => {
                     )
                 }
             </Grid> 
-            <Grid xs={videoPopup && videoPopup === pythonApp ? 6 : ( !videoPopup ? 2 : 0)} style={{height:"15vh",  marginTop: videoPopup && videoPopup === pythonApp ? '50%' :"50%", background: videoPopup && videoPopup !== pythonApp ? 'none' : (!isDarkMode ? '#FBFBFB' : ''),
+            <Grid xs={videoPopup && videoPopup === pythonApp ? 6 : ( !videoPopup ? 2 : 0)} style={{height:"10vh",  marginTop: videoPopup && videoPopup === pythonApp ? '50%' :"50%", background: videoPopup && videoPopup !== pythonApp ? 'none' : (!isDarkMode ? '#FBFBFB' : ''),
             borderRadius:'8px', display:"flex", flexDirection:'column', alignItems:"center",justifyContent:"center", 
                 }}
                 onMouseEnter={(e) => {
@@ -150,7 +149,7 @@ const Projects = () => {
                     )
                 }
             </Grid> 
-            <Grid xs={videoPopup && videoPopup === movieApp ? 6 : ( !videoPopup ? 2 : 0)} style={{height:"15vh", marginTop:"30%", background: videoPopup && videoPopup !== movieApp ? 'none' : (!isDarkMode ? '#FBFBFB' : ''),
+            <Grid xs={videoPopup && videoPopup === movieApp ? 6 : ( !videoPopup ? 2 : 0)} style={{height:"10vh", marginTop:"30%", background: videoPopup && videoPopup !== movieApp ? 'none' : (!isDarkMode ? '#FBFBFB' : ''),
             borderRadius:'8px', display:"flex", flexDirection:'column', alignItems:"center",justifyContent:"center", 
             marignRight: videoPopup && videoPopup === movieApp ? '5rem' : ''
                 }}

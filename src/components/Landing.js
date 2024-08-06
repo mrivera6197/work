@@ -106,7 +106,7 @@ const Landing = () => {
                             >Mali Rivera</Typography>
                             <Typography 
                             style={{fontSize:'14px', fontFamily: '"Nunito Sans", sans-serif',  color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',  animation: 'fadeIn 2s ease-in-out forwards',}}
-                            >Designer & Software Engineer</Typography>
+                            >Full-Stack Software Engineer</Typography>
                             </div>
                             <div 
                             style={{
@@ -142,6 +142,21 @@ const Landing = () => {
                                         className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
                                         onClick={() => setSection('home')}
                                         >Home</button>
+                                       <button style={
+                                        {
+                                        width: '50%', 
+                                        fontSize:'14px',
+                                        border: 'none',
+                                        color: !isDarkMode ? '#292826' : '#E9E9E1',
+                                        background: 'none', 
+                                        boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
+                                        margin: 5, 
+                                        fontWeight: 'bold',
+                                        fontFamily: '"Nunito Sans", sans-serif'
+                                        }}
+                                        className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
+                                        onClick={() => setSection('questions')}
+                                        >Qs</button>
                                     <button style={
                                         {width: '50%', 
                                         fontSize:'14px',
@@ -169,21 +184,7 @@ const Landing = () => {
                                         className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
                                         onClick={() => setSection('projects')}
                                         >Projects</button>
-                                    <button style={
-                                        {
-                                        width: '50%', 
-                                        fontSize:'14px',
-                                        border: 'none',
-                                        color: !isDarkMode ? '#292826' : '#E9E9E1',
-                                        background: 'none', 
-                                        boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
-                                        margin: 5, 
-                                        fontWeight: 'bold',
-                                        fontFamily: '"Nunito Sans", sans-serif'
-                                        }}
-                                        className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
-                                        onClick={() => setSection('questions')}
-                                        >Qs</button>
+
                                 </div>
                             </div>
                             <div 
@@ -227,14 +228,13 @@ const Landing = () => {
     
                             {section && section === 'home' ? (
                             <Grid xs={6} 
-                            style={{ width: '60%',
+                            style={{ width: '100%',
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'flex-end',
                             justifyContent:'flex-end',
                             }}>
                                 <div style={{ 
-                                    width: '80%',
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'flex-end',
@@ -242,24 +242,44 @@ const Landing = () => {
                                     fontSize: '14px',
                                     overflow:'hidden',
                                     margin:'4rem',
+                                    width: '25%',
                                 }} >
                                         <div style={{
-                                            width: '21%', padding: 15, 
-                                            display: 'flex', justifyContent:'center', alignItems: 'flex-end'
+                                            padding: 15, 
+                                            display: 'flex', justifyContent:'center', alignItems: 'flex-start'
                                             , textAlign: 'left',
                                             background: !isDarkMode ? '#fff' : 'none',
                                             overflow:'hidden',
                                             borderRadius:'8px',
                                             animation: 'fadeIn 1s ease-in-out forwards',
+                                            margin: 2, 
                                             }}>
                                         {section && section === 'home' && (
                                         homeData[0].bio.map((line ) => (
-                                            <Typography style={{
-                                                 lineHeight:'1.3rem',
+                                            <div style={{
+                                                background: '#121212', 
+                                                padding: 10, 
+                                                borderRadius: '8px'
+                                                }}>
+                                            <div
+                                            style={{
+                                                marginBottom: 5, 
+                                                 lineHeight:'1.5rem',
                                                  fontSize: '14px',
                                                  fontFamily: '"Nunito Sans", sans-serif',
                                                  color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
-                                                }}>{line}</Typography>
+                                                }}>I'm a Software Engineer in Brooklyn, NY, specializing in intuitive user experiences through a blend of biology, technology, and art.
+                                            </div>
+                                                <div
+                                            style={{
+                                                marginBottom: 5, 
+                                                 lineHeight:'1.5rem',
+                                                 fontSize: '14px',
+                                                 fontFamily: '"Nunito Sans", sans-serif',
+                                                 color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
+                                                }}>Currently working as a contractor for a health tech company, I am seeking full-time opportunities to contribute to impactful projects.  
+                                                </div>
+                                                </div>
                                         ))
                                     )} 
     
@@ -270,7 +290,7 @@ const Landing = () => {
     
                             {section && section === 'questions' ? (
                                 <Grid xs={6} style={{display:'flex',
-                                justifyContent:'center', alignItems: 'flex-start', width: '60%'
+                                justifyContent:'center', alignItems: 'flex-start', width: '100%', height: '90vh', overflow: 'hidden',
                                 }}
                                 >
                                  <Questions />
@@ -279,7 +299,7 @@ const Landing = () => {
                             ): <></>}
                             {section && section === 'projects' ? (
                                 <Grid xs={6} style={{display:'flex',
-                                justifyContent:'center', alignItems: 'flex-start', width: '60%',}}>
+                                justifyContent:'center', alignItems: 'flex-start', width: '100%',}}>
                                  <Projects/>
                                 </Grid>
     
