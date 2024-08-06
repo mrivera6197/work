@@ -32,7 +32,7 @@ const Landing = () => {
     {!loaded ? (
             <Box
             style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', 
-            height: '100vh', color:'white', width: '100%', background: '#151616'}} 
+            height: '100vh', color:'white', width: '100%', background: !isDarkMode ? '' : '#151616'}} 
             >
                 <Box style={{width: '90%', height: '90vh', justifyContent: 'center', display: 'flex',
             flexDirection: 'column', alignItems:"center"}} className='loadingDiv'>
@@ -257,7 +257,7 @@ const Landing = () => {
                                         {section && section === 'home' && (
                                         homeData[0].bio.map((line ) => (
                                             <div style={{
-                                                background: '#121212', 
+                                                background: !isDarkMode ? '' : '#121212', 
                                                 padding: 10, 
                                                 borderRadius: '8px'
                                                 }}>
