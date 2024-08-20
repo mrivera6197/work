@@ -19,7 +19,7 @@ const Projects = () => {
     const [videoPopup, setVideoPopup] = useState(null); 
     const { isDarkMode } = useDarkModeContext(); 
     const [page, setPage] = useState(1); 
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const movieAppImages = [
         { type: 'img', src: adminView },
         { type: 'video', src: movieApp },
@@ -28,7 +28,7 @@ const Projects = () => {
 
 
     useEffect(() => {
-        setLoading(true); 
+        setLoading(false); 
       }, [videoPopup]);
 
     const handleChange = (event, value) => {
