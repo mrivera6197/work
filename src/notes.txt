@@ -1,0 +1,46 @@
+
+Amazon EC2 
+
+- EC2 instance is a virtual server in the AWS Cloud
+
+
+DynamoDB
+
+- NoSQL, not only SQL 
+- key:value look up store
+- distributes data across different partitions
+- managed db -> don't have access to nor care what is going on under the hood of dynamoDB 
+- optimized for performance at scale, can scale at horizontally by adding more nodes to the cluster and separating data out onto those nodes so that even if the size of the data that your storing in your cluster grows your not necesarially going to be impacted on the performance (there are edge cases to this)
+- high availability (time that is up) and durability (stores multiple copies of data across multiple nodes, if one goes down can retrieve another)
+- ideal for applications with known access patterns 
+- access through APIs/ORMS and authorized through IAM 
+- integrates well with other AWS Services 
+- you can setup dynamoDB streams and pipe them into lambda function to get batch of notifications 
+- cost effective usage based payment model 
+- cost models: on demand (pay as requests come in), provision mode (can set dynamo capacity at times, can set this up to autoscale) 
+
+- core concepts 
+- tables are a collection of items 
+- items are collections of attributes or key:value pairs
+- primary key can consist of partiition key and sort key (ex: accountID(partition) + creationDate(sort))
+- attributes can be arbitraty pairs of keys:values 
+- get charged for iteration costs, iterating over each row when reading db
+- global secondary index (GSI) => instead of querying on partition key and sort key we can query on any other column
+
+
+AWS management console 
+- dynamodb 
+- 20:00m
+
+
+AWS CloudWatch 
+- how it works: phases: collect (collect metrics), monitor (graphs, etc.), act (automate events, autoscale), analyze (data cutting, grouping)
+- cloudWatch is a way to manage and monitor the health of you application, its really a feedback loop 
+
+in the CloudWatch console 
+- cloudwatch is an umbrella service, lots of smaller features 
+- dashboards allow you to create a one stop shop for monitoring different themes of your app
+- can add different widgets and labels, give you a quick at a glance view of app 
+
+- alarms 
+- logs 
