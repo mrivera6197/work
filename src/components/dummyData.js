@@ -240,8 +240,8 @@ export const homeData = [
 
 export const questions =  [
     {
-        title: 'Preferred Dev Stack:', 
-        value: 'React.js, Node.js, MUI', 
+        title: 'Current Dev Stack:', 
+        value: 'React.js, Node.js, PostgreSQL', 
     },
     {
         title: 'Skills', 
