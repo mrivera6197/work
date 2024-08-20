@@ -9,23 +9,29 @@ import resume from '../images/resume.mp4';
 import adminView from '../images/adminView.png';
 import userView from '../images/userView.png';
 import movieApp from '../images/movieAppDemo.mp4';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDarkModeContext } from '../hooks/DarkModeProvider';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const Projects = () => {
     const [videoPopup, setVideoPopup] = useState(null); 
     const { isDarkMode } = useDarkModeContext(); 
     const [page, setPage] = useState(1); 
+    const [loading, setLoading] = useState(true);
     const movieAppImages = [
         { type: 'img', src: adminView },
         { type: 'video', src: movieApp },
         { type: 'img', src: userView },
     ]
 
+
+    useEffect(() => {
+        setLoading(true); 
+      }, [videoPopup]);
+
     const handleChange = (event, value) => {
-        console.log("value?", value)
         setPage(value);
       };
 
@@ -62,7 +68,9 @@ const Projects = () => {
                             <p>Material UI components</p>
                         </div>
                         <div style={{border:'1px solid grey', borderRadius: '8px', width: '85%', display:"flex", flexDirection:'column', alignItems:"center", justifyContent:"center"}}>
-                        <video src={videoPopup} muted height={400} autoPlay={true} loop={true} style={{borderRadius:"8px"}} />
+                        <video 
+                        onLoadedData={() => setLoading(false)}
+                        src={videoPopup} muted height={400} autoPlay={true} loop={true} style={{borderRadius:"8px"}} />
                         </div>
                         </div>
                         
@@ -90,7 +98,8 @@ const Projects = () => {
                         <p>Java Spring Boot and MariaDB backend, React frontend</p>
                          <p>Material UI components, Chart JS visualizations</p>
                         </div>
-                        <video src={videoPopup} muted height={450} autoPlay={true} loop={true} style={{borderRadius:'8px'}} /> 
+                        <video onLoadedData={() => setLoading(false)}
+                        src={videoPopup} muted height={450} autoPlay={true} loop={true} style={{borderRadius:'8px'}} /> 
                         </div>
                     )
                 }
@@ -118,7 +127,15 @@ const Projects = () => {
                                 <p>built from scratch</p>
                             </div>  
                             <div style={{border: '1px solid grey', borderRadius: '8px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', width:'70%'}}>
-                            <video src={videoPopup} muted height={450} autoPlay={true} loop={true} style={{borderRadius:'8px'}}/> 
+                                {
+                                    loading ? (
+                                    <CircularProgress fontSize='small'/>
+                                    ) : (
+                                        <video
+                                        onLoadedData={() => setLoading(false)}
+                                        src={videoPopup} muted height={450} autoPlay={true} loop={true} style={{borderRadius:'8px'}}/> 
+                                    )
+                                }
                             </div>  
                             </div>
                         )
@@ -159,7 +176,15 @@ const Projects = () => {
                         ,fontWeight:'bold', textDecoration:"underline"}}>Gene Computation</Typography>
                     ) : videoPopup === pythonApp && (
                         <div style={{color: !isDarkMode ? '#151616' : '#FBFBFB', width: '100%', height: '100vh' }}>
-                        <video src={videoPopup} muted height={300} autoPlay={true} loop={true} style={{borderRadius:'8px'}}/> 
+                        {
+                            loading ? (
+                                <CircularProgress fontSize='small' />
+                            ) : (
+                                <video 
+                                onLoadedData={() => setLoading(false)}
+                                src={videoPopup} muted height={300} autoPlay={true} loop={true} style={{borderRadius:'8px'}}/> 
+                            )
+                        }
                         <div style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:14 }}>
                         <h3>Gene computation App</h3>
                         <p>Python, Matplotlib visualizations</p>
@@ -200,7 +225,9 @@ const Projects = () => {
                                 movieAppImages[page-1] && movieAppImages[page-1].type === 'img'? (
                                     <img style={{width: '100%'}} src={movieAppImages[page-1].src}/>
                                 ) : (
-                                    <video controls autoplay loop style={{width: '100%'}} src={movieAppImages[page-1].src}/>
+                                    <video 
+                                    onLoadedData={() => setLoading(false)}
+                                    controls autoplay loop style={{width: '100%'}} src={movieAppImages[page-1].src}/>
                                 )
                             }
                         <Stack spacing={2} alignItems={"center"}>
