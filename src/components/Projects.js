@@ -9,7 +9,7 @@ import resume from '../images/resume.mp4';
 import adminView from '../images/adminView.png';
 import userView from '../images/userView.png';
 import movieApp from '../images/movieAppDemo.mp4';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useDarkModeContext } from '../hooks/DarkModeProvider';
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
@@ -25,6 +25,11 @@ const Projects = () => {
         { type: 'video', src: movieApp },
         { type: 'img', src: userView },
     ]
+
+    const video = document.querySelector('#custom-video');
+    if(video) {
+      video.playbackRate = 1.7;
+    }
 
 
     useEffect(() => {
@@ -69,6 +74,8 @@ const Projects = () => {
                         </div>
                         <div style={{border:'1px solid grey', borderRadius: '8px', width: '85%', display:"flex", flexDirection:'column', alignItems:"center", justifyContent:"center"}}>
                         <video 
+                        id="custom-video"
+                        onloadstart="this.playbackRate = 2;"
                         onLoadedData={() => setLoading(false)}
                         src={videoPopup} muted height={400} autoPlay={true} loop={true} style={{borderRadius:"8px"}} />
                         </div>
@@ -98,7 +105,7 @@ const Projects = () => {
                         <p>Java Spring Boot and MariaDB backend, React frontend</p>
                          <p>Material UI components, Chart JS visualizations</p>
                         </div>
-                        <video onLoadedData={() => setLoading(false)}
+                        <video id="custom-video" onLoadedData={() => setLoading(false)}
                         src={videoPopup} muted height={450} autoPlay={true} loop={true} style={{borderRadius:'8px'}} /> 
                         </div>
                     )
