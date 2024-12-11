@@ -157,7 +157,7 @@ const Landing = () => {
                                         className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
                                         onClick={() => setSection('questions')}
                                         >Qs</button>
-                                    <button style={
+                                    {/* <button style={
                                         {width: '50%', 
                                         fontSize:'14px',
                                         background: 'none', 
@@ -169,7 +169,7 @@ const Landing = () => {
                                         }}
                                         className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
                                         onClick={scrollToMovies}
-                                        >Movies</button>
+                                        >Movies</button> */}
                                     <button style={
                                         {width: '50%', 
                                         fontSize:'14px',
@@ -220,6 +220,22 @@ const Landing = () => {
                                 href="https://www.linkedin.com/in/mali-rivera-41832a12b" 
                                 target={"_blank"}
                                 >LinkedIn
+                                </Link>
+                                <Link
+                                style={{
+                                    width: '50%', 
+                                    fontSize:'14px',
+                                    border: 'none',
+                                    color: !isDarkMode ? '#292826' : '#E9E9E1',
+                                    background: 'none', 
+                                    boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
+                                    margin: 5, 
+                                    fontWeight: 'bold',
+                                    fontFamily: '"Nunito Sans", sans-serif'
+                            }}
+                                href="https://github.com/mrivera6197" 
+                                target={"_blank"}
+                                >Github
                                 </Link>
                                 </div>
                                 
@@ -296,7 +312,7 @@ const Landing = () => {
                                  <Questions />
                                 </Grid>
     
-                            ): <></>}
+                            ): <></>} 
                             {section && section === 'projects' ? (
                                 <Grid xs={6} style={{display:'flex',
                                 justifyContent:'center', alignItems: 'flex-start', width: '100%',}}>
@@ -310,7 +326,7 @@ const Landing = () => {
                     </Grid>
     
                 </Grid>
-                <Movie ref={targetRef}/>
+                {/* <Movie ref={targetRef}/> */}
         </Grid>
         )}
             </div>

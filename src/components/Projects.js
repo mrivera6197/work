@@ -2,7 +2,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import { Typography } from '@mui/material';
 import budget from '../images/dashFinal.mp4'
 import lemoncub from '../images/calm.mp4';
-import termVid from '../images/termVid.mp4';
+import termVid from '../images/lemonapp.mp4';
 import pythonApp from '../images/pythonApp.mp4';
 import resume from '../images/resume.mp4'; 
 // import  movieApp from '../images/movieOld.mp4';
@@ -64,12 +64,12 @@ const Projects = () => {
                 {
                     !videoPopup ? (
                         <Typography style={{color: !isDarkMode ? '#151616' : '#FBFBFB', fontSize:14,  fontFamily: '"Nunito Sans", sans-serif'
-                        ,fontWeight:'bold', textDecoration:"underline"}}>Music App</Typography>
+                        ,fontWeight:'bold', textDecoration:"underline"}}>Self-help App</Typography>
                     ) : videoPopup === termVid && (
                         <div style={{fontSize:14,  fontFamily: '"Nunito Sans", sans-serif', width: '100%', height: '100vh', marginTop: 200}}>
                            <div style={{color: !isDarkMode ? '#151616' : '#FBFBFB' }}>
-                            <h3>Music Playlist App Designed for Runners </h3>
-                            <p>Front-end React App inteacting with Spotify and Geolocation APIs </p>
+                            <h3>Self help App </h3>
+                            <p>PostgreSQL, Prisma, Express, Node, React, OKTA User Authentication </p>
                             <p>Material UI components</p>
                         </div>
                         <div style={{border:'1px solid grey', borderRadius: '8px', width: '85%', display:"flex", flexDirection:'column', alignItems:"center", justifyContent:"center"}}>
