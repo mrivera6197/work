@@ -1,336 +1,300 @@
-import { Typography, Box, Link } from '@mui/material';
-import { useEffect, useState, useRef } from 'react';
-import Grid from '@mui/material/Unstable_Grid2';
-import { homeData } from './dummyData';
-import WbSunnyIcon from '@mui/icons-material/WbSunny';
-import Brightness1Icon from '@mui/icons-material/Brightness1';
-import Questions from './Questions';
-import Projects from './Projects';
-import LinearProgress from '@mui/material/LinearProgress';
-import Movie from './Movie';
+import { useEffect, useState } from 'react';
 import { useDarkModeContext } from '../hooks/DarkModeProvider';
+import Projects from './Projects';
+import profilePhoto from '../images/IMG_2184.JPG';
 
 const Landing = () => {
-    const [section, setSection] = useState('home'); 
-    const [loaded, setLoaded] = useState(false); 
-    const targetRef = useRef(null);
-    const { isDarkMode, toggleDarkMode } = useDarkModeContext(); 
+  const [section, setSection] = useState('home');
+  const { isDarkMode, toggleDarkMode } = useDarkModeContext();
 
-    useEffect(() => {
-        setTimeout(() => {
-          setLoaded(true);
-        }, 3000); 
-      }, []);
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+  }, [isDarkMode]);
 
-    const scrollToMovies = () => {
-        if (targetRef.current) {
-            targetRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-    };
-
-    return ( <div>
-    {!loaded ? (
-            <Box
-            style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', 
-            height: '100vh', color:'white', width: '100%', background: !isDarkMode ? '' : '#151616'}} 
+  return (
+    <div className="App">
+      {/* Header */}
+      <header className="header">
+        <div className="header-inner">
+          <div className="logo">Mali Rivera</div>
+          <nav className="nav">
+            <button
+              className={`nav-link ${section === 'home' ? 'active' : ''}`}
+              onClick={() => setSection('home')}
             >
-                <Box style={{width: '90%', height: '90vh', justifyContent: 'center', display: 'flex',
-            flexDirection: 'column', alignItems:"center"}} className='loadingDiv'>
-                    <LinearProgress  
-                    style={{ margin: 10, width: "25%" }}
-                    color='secondary'/>
-                </Box>
-            
-            </Box>
-        ) : ( 
-        <Grid container spacing={2} 
-        style={{ 
-            display: 'flex', 
-            flexDirection: 'column', 
-            justifyContent: 'center', 
-            alignItems: 'center',
-            borderRadius: '8px',
-            background: !loaded ? '#151616' : (!isDarkMode ? '#FBFBFB' : '#151616'),
-            }}>
-            <Grid xs={12} style={{display:"flex", flexDirection: 'column', alignItems:'flex-end',
-            justifyContent: 'center', width: '100%'}}>
-                    <button style={{margin:5, marginRight: 10, border: 'none', background:'none'}} onClick={() => toggleDarkMode()}>{
-                        !isDarkMode ? <Brightness1Icon fontSize='small' style={{color:'rgba(26, 26, 26, 0.851)'}}/> : <WbSunnyIcon fontSize='small' style={{color:'rgba(196, 196, 187, 0.93)'}}/>
-                    }</button>
-                    <Grid xs={12} style={{ 
-                            height: '100vh', 
-                            display: 'flex',
-                            justifyContent: 'center', 
-                            alignItems: 'center',
-                            width: '100%',
-                            boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
-                            background: !isDarkMode ? '#FBFBFB' : '#181818',
-                            borderRadius: '8px',
-                            margin: 5,                            
-                            }}
-                            className="landingContainer"
-                            >
-                        <Grid xs={12} style={{  
-                            marginTop:0,
-                            margin: 20, 
-                            width: '100%', 
-                            height: '93vh',
-                            boxShadow: 'rgba(0, 0, 0, 0.3) 0px 0px 0px 1px',
-                            display: 'flex',
-                            justifyContent: 'center',
-                            borderRadius: '8px',
-                            }}
-                            className={!isDarkMode ? 'backdrop' : 'backdropDark'}
-                            >
-    
-                        <Grid xs={4} style={{ width: '40%'}}>
-                            <div style={{
-                                display:'flex', 
-                                flexDirection: 'column',
-                                justifyContent: 'center', 
-                                alignItems: 'flex-start', 
-                                boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
-                                margin: '4rem',
-                                }}>
-                            <Typography 
-                            style={{fontSize:'1.5rem', 
-                            fontFamily: '"Nunito Sans", sans-serif',
-                            color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
-                            animation: 'twistIn 1s ease-in-out forwards',
-                            transformStyle: 'preserve3d;',
-                            transition: 'transform 0.5s;',
-                            '&:hover': {
-                              animation: 'twistIn 1s ease-in-out forwards',
-                            }
-                        }}
-                            >Mali Rivera</Typography>
-                            <Typography 
-                            style={{fontSize:'14px', fontFamily: '"Nunito Sans", sans-serif',  color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',  animation: 'fadeIn 2s ease-in-out forwards',}}
-                            >Full-Stack Software Engineer</Typography>
-                            </div>
-                            <div 
-                            style={{
-                                display:'flex',
-                                flexDirection:'column',
-                                justifyContent:'center',
-                                alignItems:'flex-start',
-                                margin:"4rem",
-                                marginTop: '2rem',
-                                height:'20vh',
-                                borderRadius: '8px',
-                                animation: 'fadeIn 2s ease-in-out forwards',
-                                }}>
-                                <div style={{
-                                    display:'flex',
-                                    flexDirection:'column',
-                                    justifyContent:'center',
-                                    width: '50%',
-                                }}>
-                                    <button style={
-                                        {width: '50%', 
-                                        fontSize:'14px',
-                                        background: 'none', 
-                                        border: 'none',
-                                        padding: 5, 
-                                        margin: 5, 
-                                        fontWeight: 'bold',
-                                        fontFamily: '"Nunito Sans", sans-serif',
-                                        '&:hover': {
-                                            color: 'blue'
-                                        }
-                                        }} 
-                                        className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
-                                        onClick={() => setSection('home')}
-                                        >Home</button>
-                                       <button style={
-                                        {
-                                        width: '50%', 
-                                        fontSize:'14px',
-                                        border: 'none',
-                                        color: !isDarkMode ? '#292826' : '#E9E9E1',
-                                        background: 'none', 
-                                        boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
-                                        margin: 5, 
-                                        fontWeight: 'bold',
-                                        fontFamily: '"Nunito Sans", sans-serif'
-                                        }}
-                                        className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
-                                        onClick={() => setSection('questions')}
-                                        >Qs</button>
-                                    {/* <button style={
-                                        {width: '50%', 
-                                        fontSize:'14px',
-                                        background: 'none', 
-                                        border: 'none',
-                                        padding: 5, 
-                                        margin: 5, 
-                                        fontWeight: 'bold',
-                                        fontFamily: '"Nunito Sans", sans-serif'
-                                        }}
-                                        className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
-                                        onClick={scrollToMovies}
-                                        >Movies</button> */}
-                                    <button style={
-                                        {width: '50%', 
-                                        fontSize:'14px',
-                                        border: 'none',
-                                        color: !isDarkMode ? '#292826' : '#E9E9E1',
-                                        background: 'none', 
-                                        boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
-                                        margin: 5, 
-                                        fontWeight: 'bold',
-                                        fontFamily: '"Nunito Sans", sans-serif'
-                                        }}
-                                        className={!isDarkMode ? 'landingButton' : 'landingButtonDark'}
-                                        onClick={() => setSection('projects')}
-                                        >Projects</button>
+              About
+            </button>
+            <button
+              className={`nav-link ${section === 'projects' ? 'active' : ''}`}
+              onClick={() => setSection('projects')}
+            >
+              Projects
+            </button>
+            <a
+              href="https://www.linkedin.com/in/mali-rivera-41832a12b/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/mrivera6197"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nav-link"
+            >
+              GitHub
+            </a>
+            <button className="theme-toggle" onClick={toggleDarkMode}>
+              {isDarkMode ? (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="5" />
+                  <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                </svg>
+              ) : (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                </svg>
+              )}
+            </button>
+          </nav>
+        </div>
+      </header>
 
-                                </div>
-                            </div>
-                            <div 
-                            style={{
-                                display:'flex',
-                                flexDirection:'column',
-                                justifyContent:'center',
-                                alignItems:'flex-start',
-                                margin:"4rem",
-                                marginTop: '2rem',
-                                height:'20vh',
-                                borderRadius: '8px',
-                                animation: 'fadeIn 2s ease-in-out forwards',
-                                }}>
-                                <div style={{
-                                  display:'flex',
-                                  flexDirection:'column',
-                                  justifyContent:'center',
-                                  width: '50%',
-                                }}>
-                                <Link
-                                style={{
-                                    width: '50%', 
-                                    fontSize:'14px',
-                                    border: 'none',
-                                    color: !isDarkMode ? '#292826' : '#E9E9E1',
-                                    background: 'none', 
-                                    boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
-                                    margin: 5, 
-                                    fontWeight: 'bold',
-                                    fontFamily: '"Nunito Sans", sans-serif'
-                            }}
-                                href="https://www.linkedin.com/in/mali-rivera-41832a12b" 
-                                target={"_blank"}
-                                >LinkedIn
-                                </Link>
-                                <Link
-                                style={{
-                                    width: '50%', 
-                                    fontSize:'14px',
-                                    border: 'none',
-                                    color: !isDarkMode ? '#292826' : '#E9E9E1',
-                                    background: 'none', 
-                                    boxShadow: 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
-                                    margin: 5, 
-                                    fontWeight: 'bold',
-                                    fontFamily: '"Nunito Sans", sans-serif'
-                            }}
-                                href="https://github.com/mrivera6197" 
-                                target={"_blank"}
-                                >Github
-                                </Link>
-                                </div>
-                                
-                            </div>
-                        </Grid>
-    
-                            {section && section === 'home' ? (
-                            <Grid xs={6} 
-                            style={{ width: '100%',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'flex-end',
-                            justifyContent:'flex-end',
-                            }}>
-                                <div style={{ 
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-end',
-                                    justifyContent:'flex-end',
-                                    fontSize: '14px',
-                                    overflow:'hidden',
-                                    margin:'4rem',
-                                    width: '25%',
-                                }} >
-                                        <div style={{
-                                            padding: 15, 
-                                            display: 'flex', justifyContent:'center', alignItems: 'flex-start'
-                                            , textAlign: 'left',
-                                            background: !isDarkMode ? '#fff' : 'none',
-                                            overflow:'hidden',
-                                            borderRadius:'8px',
-                                            animation: 'fadeIn 1s ease-in-out forwards',
-                                            margin: 2, 
-                                            }}>
-                                        {section && section === 'home' && (
-                                        homeData[0].bio.map((line ) => (
-                                            <div style={{
-                                                background: !isDarkMode ? '' : '#121212', 
-                                                padding: 10, 
-                                                borderRadius: '8px'
-                                                }}>
-                                            <div
-                                            style={{
-                                                marginBottom: 5, 
-                                                 lineHeight:'1.5rem',
-                                                 fontSize: '14px',
-                                                 fontFamily: '"Nunito Sans", sans-serif',
-                                                 color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
-                                                }}>I'm a Software Engineer in Brooklyn, NY, specializing in intuitive user experiences through a blend of biology, technology, and art.
-                                            </div>
-                                                <div
-                                            style={{
-                                                marginBottom: 5, 
-                                                 lineHeight:'1.5rem',
-                                                 fontSize: '14px',
-                                                 fontFamily: '"Nunito Sans", sans-serif',
-                                                 color: !isDarkMode ? 'rgba(26, 26, 26, 0.851)' : 'rgba(196, 196, 187, 0.93)',
-                                                }}>Currently working as a contractor for a health tech company, I am seeking full-time opportunities to contribute to impactful projects.  
-                                                </div>
-                                                </div>
-                                        ))
-                                    )} 
-    
-                                        </div>
-                                </div>
-                                </Grid>
-                            ): null}
-    
-                            {section && section === 'questions' ? (
-                                <Grid xs={6} style={{display:'flex',
-                                justifyContent:'center', alignItems: 'flex-start', width: '100%', height: '90vh', overflow: 'hidden',
-                                }}
-                                >
-                                 <Questions />
-                                </Grid>
-    
-                            ): <></>} 
-                            {section && section === 'projects' ? (
-                                <Grid xs={6} style={{display:'flex',
-                                justifyContent:'center', alignItems: 'flex-start', width: '100%',}}>
-                                 <Projects/>
-                                </Grid>
-    
-                            ): <></>}
-    
-                           
-                    </Grid>
-                    </Grid>
-    
-                </Grid>
-                {/* <Movie ref={targetRef}/> */}
-        </Grid>
-        )}
+      {section === 'home' && <HomeSection onViewProjects={() => setSection('projects')} />}
+      {section === 'projects' && <Projects />}
+      
+      {/* Footer */}
+      <footer className="footer portfolio-container">
+        <p className="footer-text">© 2025 Mali Rivera</p>
+        <div className="footer-links">
+          <a
+            href="https://www.linkedin.com/in/mali-rivera-41832a12b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/mrivera6197"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://www.biorxiv.org/content/10.1101/2022.05.17.491668v1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link"
+          >
+            Publication
+          </a>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+const HomeSection = ({ onViewProjects }) => {
+  return (
+    <main className="portfolio-container">
+      {/* Hero */}
+      <section className="hero">
+        <div className="hero-content">
+          <p className="hero-greeting">Senior Software Engineer</p>
+          <h1 className="hero-title">
+            From the lab bench to the codebase
+          </h1>
+        </div>
+      </section>
+
+      {/* About with Photo */}
+      <section className="section">
+        <div className="about-intro">
+          <div className="about-text">
+            <p className="about-lead">
+              Founding engineer building AI-powered products from the ground up.
+            </p>
+            <div className="about-body">
+              <p>
+                Based in NYC, I'm currently the first engineering hire at an AI search startup—architecting 
+                Go microservices, building React frontends, and shipping ML-powered features end-to-end. 
+                I thrive in zero-to-one environments where I can own the full stack and move fast.
+              </p>
+              <p>
+                I'm drawn to health tech. Before engineering, I worked in clinical trials and biotech, 
+                and I've seen firsthand how much impact good software can have on patient care. 
+                That background shapes how I approach problems—methodical, curious, always experimenting.
+              </p>
+              <p>
+                Outside of work: running, movies, and being outdoors as much as possible.
+              </p>
             </div>
-        )
-}
+            <div className="hero-links" style={{ marginTop: '0.5rem' }}>
+              <a
+                href="https://www.linkedin.com/in/mali-rivera-41832a12b/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-link"
+              >
+                LinkedIn →
+              </a>
+              <a
+                href="https://github.com/mrivera6197"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-link"
+              >
+                GitHub →
+              </a>
+              <a
+                href="https://www.biorxiv.org/content/10.1101/2022.05.17.491668v1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hero-link"
+              >
+                SARS-CoV-2 Publication →
+              </a>
+            </div>
+          </div>
+          <div className="photo-container">
+            <img 
+              src={profilePhoto} 
+              alt="Mali Rivera" 
+              className="profile-photo"
+            />
+            <p className="photo-caption">Brooklyn, NY</p>
+          </div>
+        </div>
+      </section>
 
-export default Landing; 
+      {/* Experience */}
+      <section className="section">
+        <div className="section-header">
+          <h2 className="section-title">Experience</h2>
+        </div>
+        <div className="experience-list">
+          <article className="experience-item fade-up" style={{ animationDelay: '0.1s' }}>
+            <span className="experience-period">2025 — Present</span>
+            <div className="experience-content">
+              <h3>Founding Software Engineer</h3>
+              <p className="experience-company">Refine Technology Inc · New York, NY</p>
+              <p className="experience-description">
+                First engineering hire at AI-powered e-commerce search startup. Architecting Go microservices 
+                on GCP/Kubernetes, building the merchant dashboard in React/Next.js, and leading ML experimentation 
+                with vector databases and embedding models. Owning everything from infrastructure to UX.
+              </p>
+            </div>
+          </article>
+          <article className="experience-item fade-up" style={{ animationDelay: '0.15s' }}>
+            <span className="experience-period">2023 — 2025</span>
+            <div className="experience-content">
+              <h3>Software Engineer</h3>
+              <p className="experience-company">Moyae · Health Tech</p>
+              <p className="experience-description">
+                Core engineer on a small team building healthcare software. Designed Redis-based sync systems, 
+                integrated e-prescribing APIs, and built FHIR-compliant data pipelines. The kind of work where 
+                you see the direct impact on patient care.
+              </p>
+            </div>
+          </article>
+          <article className="experience-item fade-up" style={{ animationDelay: '0.2s' }}>
+            <span className="experience-period">2021 — 2022</span>
+            <div className="experience-content">
+              <h3>Research Associate II</h3>
+              <p className="experience-company">Genocea Biosciences · Cambridge, MA</p>
+              <p className="experience-description">
+                Ran patient screening for a Phase 1/2a cancer immunotherapy trial. Built Python automation 
+                for lab workflows and data analysis. This is where I caught the programming bug—automating 
+                my own job was too much fun to stop.
+              </p>
+            </div>
+          </article>
+          <article className="experience-item fade-up" style={{ animationDelay: '0.25s' }}>
+            <span className="experience-period">2019 — 2020</span>
+            <div className="experience-content">
+              <h3>Clinical Research Coordinator</h3>
+              <p className="experience-company">Massachusetts General Hospital · Boston, MA</p>
+              <p className="experience-description">
+                Coordinated breast oncology clinical trials. Worked directly with patients and saw firsthand 
+                how much of healthcare runs on paper and workarounds. Planted the seed for wanting to fix that.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section className="section">
+        <div className="section-header">
+          <h2 className="section-title">Technical Skills</h2>
+        </div>
+        <div className="skills-grid">
+          <div className="skill-category">
+            <h3>Languages</h3>
+            <div className="skill-list">
+              <span className="skill-item">Go</span>
+              <span className="skill-item">JavaScript / TypeScript</span>
+              <span className="skill-item">Python</span>
+              <span className="skill-item">SQL</span>
+            </div>
+          </div>
+          <div className="skill-category">
+            <h3>Frontend</h3>
+            <div className="skill-list">
+              <span className="skill-item">React / Next.js</span>
+              <span className="skill-item">Tailwind / MUI</span>
+              <span className="skill-item">Chart.js</span>
+            </div>
+          </div>
+          <div className="skill-category">
+            <h3>Backend & Infra</h3>
+            <div className="skill-list">
+              <span className="skill-item">Node.js / FastAPI</span>
+              <span className="skill-item">GCP / AWS</span>
+              <span className="skill-item">Kubernetes / Docker</span>
+            </div>
+          </div>
+          <div className="skill-category">
+            <h3>Data</h3>
+            <div className="skill-list">
+              <span className="skill-item">PostgreSQL / MongoDB</span>
+              <span className="skill-item">Redis / ClickHouse</span>
+              <span className="skill-item">Qdrant / Vector Search</span>
+              <span className="skill-item">FHIR</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Education */}
+      <section className="section">
+        <div className="section-header">
+          <h2 className="section-title">Education</h2>
+        </div>
+        <div className="experience-list">
+          <div className="education-item fade-up">
+            <span className="experience-period">2022 — 2024</span>
+            <div>
+              <h3>Boston University</h3>
+              <p>M.S. in Software Development</p>
+            </div>
+          </div>
+          <div className="education-item fade-up" style={{ animationDelay: '0.1s' }}>
+            <span className="experience-period">2015 — 2019</span>
+            <div>
+              <h3>Northeastern University</h3>
+              <p>B.S. in Biology · Behavioral Neuroscience & Psychology minors</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default Landing;
